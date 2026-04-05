@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:camunda="http://camunda.org/schema/1.0/bpmn"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+             targetNamespace="http://iman.org/bpmn/network"
+             exporter="Claude Code"
+             exporterVersion="1.0">
+
+  <collaboration id="collaboration2">
+    <participant id="participant2" name="IMAN Network Expansion" processRef="NetworkExpansion"/>
+  </collaboration>
+
+  <process id="NetworkExpansion" name="IMAN Network Expansion Process" isExecutable="true">
+
+    <laneSet id="laneSet2">
+      <lane id="laneCoordinator" name="Network Development Coordinator">
+        <flowNodeRef>taskSelectProspect</flowNodeRef>
+        <flowNodeRef>taskReviewApprove</flowNodeRef>
+        <flowNodeRef>taskIntroCall</flowNodeRef>
+        <flowNodeRef>gatewayAlignment</flowNodeRef>
+        <flowNodeRef>gatewayRelType</flowNodeRef>
+        <flowNodeRef>taskFundingProposal</flowNodeRef>
+      </lane>
+      <lane id="laneClaude" name="Claude Code (AI Assistant)">
+        <flowNodeRef>taskResearch</flowNodeRef>
+        <flowNodeRef>taskDraftMessage</flowNodeRef>
+        <flowNodeRef>taskPartnershipAgreement</flowNodeRef>
+        <flowNodeRef>taskUpdateKnowledge</flowNodeRef>
+        <flowNodeRef>endEventNoFit</flowNodeRef>
+      </lane>
+      <lane id="laneApollo" name="Apollo / CRM">
+        <flowNodeRef>startEvent2</flowNodeRef>
+        <flowNodeRef>taskImportSegment</flowNodeRef>
+        <flowNodeRef>taskSendOutreach</flowNodeRef>
+        <flowNodeRef>gatewayResponse</flowNodeRef>
+        <flowNodeRef>taskMarkCold</flowNodeRef>
+        <flowNodeRef>endEventCold</flowNodeRef>
+        <flowNodeRef>taskOnboard</flowNodeRef>
+        <flowNodeRef>taskUpdateCRM</flowNodeRef>
+        <flowNodeRef>endEventActive</flowNodeRef>
+      </lane>
+    </laneSet>
+
+    <!-- ═══════════════════════ EVENTS ═══════════════════════ -->
+
+    <startEvent id="startEvent2" name="Prospect list&#10;ready (Apollo)">
+      <outgoing>flowS1</outgoing>
+    </startEvent>
+
+    <endEvent id="endEventCold" name="Prospect archived&#10;(cold)">
+      <incoming>flowToCold</incoming>
+      <terminateEventDefinition/>
+    </endEvent>
+
+    <endEvent id="endEventNoFit" name="Closed — no&#10;strategic fit">
+      <incoming>flowNoFit</incoming>
+      <terminateEventDefinition/>
+    </endEvent>
+
+    <endEvent id="endEventActive" name="Active network&#10;member">
+      <incoming>flowToEnd</incoming>
+    </endEvent>
+
+    <!-- ═══════════════════════ TASKS — Apollo / CRM ══════════════════════ -->
+
+    <serviceTask id="taskImportSegment" name="Import &amp; segment&#10;prospect list" camunda:topic="apollo-import">
+      <documentation>Import 700-person Apollo list. Segment by type: Funder, Partner Org, Community Leader, Corporate, Government, Academic. Assign priority score based on mission alignment and funding cycle.</documentation>
+      <incoming>flowS1</incoming>
+      <outgoing>flowS2</outgoing>
+    </serviceTask>
+
+    <serviceTask id="taskSendOutreach" name="Send outreach sequence&#10;(email / LinkedIn)" camunda:topic="apollo-sequence">
+      <documentation>Trigger Apollo email/LinkedIn sequence. 3-touch cadence: Day 1 intro, Day 8 follow-up, Day 22 final nudge. Log all activity in CRM with timestamps.</documentation>
+      <incoming>flowS6</incoming>
+      <outgoing>flowS7</outgoing>
+    </serviceTask>
+
+    <serviceTask id="taskMarkCold" name="Mark cold in CRM,&#10;log reason + date" camunda:topic="apollo-update">
+      <documentation>Tag prospect as cold after 3 unanswered touches. Log reason, last contact date, and flag for re-engagement review in 6 months.</documentation>
+      <incoming>flowResponseNo</incoming>
+      <outgoing>flowToCold</outgoing>
+    </serviceTask>
+
+    <serviceTask id="taskOnboard" name="Onboard to IMAN&#10;community network" camunda:topic="crm-onboard">
+      <documentation>Send onboarding packet: IMAN overview, community calendar, program updates. Add to mailing list and community advisor roster in CRM.</documentation>
+      <incoming>flowRelCommunity</incoming>
+      <outgoing>flowMerge3</outgoing>
+    </serviceTask>
+
+    <serviceTask id="taskUpdateCRM" name="Update CRM — relationship&#10;status + next touchpoint" camunda:topic="crm-update">
+      <documentation>Log relationship type, formalization outcome, key contacts, and schedule next nurture touchpoint (quarterly minimum). Set reminder for funder grant cycles.</documentation>
+      <incoming>flowMerge1</incoming>
+      <incoming>flowMerge2</incoming>
+      <incoming>flowMerge3</incoming>
+      <outgoing>flowS13</outgoing>
+    </serviceTask>
+
+    <!-- ═══════════════════════ TASKS — Coordinator ═══════════════════════ -->
+
+    <userTask id="taskSelectProspect" name="Select next prospect&#10;from priority queue" camunda:assignee="coordinator">
+      <documentation>Choose the highest-priority uncontacted prospect from the segmented queue. Review segment type and any existing IMAN connections before proceeding.</documentation>
+      <incoming>flowS2</incoming>
+      <outgoing>flowS3</outgoing>
+    </userTask>
+
+    <userTask id="taskReviewApprove" name="Review &amp; approve&#10;outreach message" camunda:assignee="coordinator">
+      <documentation>Review the AI-drafted message for accuracy, tone, and personal fit. Edit as needed. Approve to trigger send via Apollo sequence.</documentation>
+      <incoming>flowS5</incoming>
+      <outgoing>flowS6</outgoing>
+    </userTask>
+
+    <userTask id="taskIntroCall" name="Conduct intro call /&#10;meeting (30 min)" camunda:assignee="coordinator">
+      <documentation>Introduce IMAN's mission and programs. Listen for areas of alignment. Identify: decision-making authority, interest level, potential opportunity type, and timeline. Log detailed notes in CRM.</documentation>
+      <incoming>flowResponseYes</incoming>
+      <outgoing>flowS9</outgoing>
+    </userTask>
+
+    <userTask id="taskFundingProposal" name="Prepare funding proposal&#10;/ LOI / pitch deck" camunda:assignee="coordinator">
+      <documentation>Coordinate with program staff. Use Claude Code to generate or adapt pitch deck and LOI. Submit within 2 weeks of intro call unless funder specifies otherwise.</documentation>
+      <incoming>flowRelFunder</incoming>
+      <outgoing>flowMerge1</outgoing>
+    </userTask>
+
+    <!-- ═══════════════════════ TASKS — Claude Code ══════════════════════ -->
+
+    <serviceTask id="taskResearch" name="Research prospect&#10;background &amp; alignment" camunda:topic="claude-research">
+      <documentation>Claude Code researches: org mission, recent news, board connections, past IMAN-adjacent work, funding focus areas, LinkedIn profile. Outputs a 1-page brief.</documentation>
+      <incoming>flowS3</incoming>
+      <outgoing>flowS4</outgoing>
+    </serviceTask>
+
+    <serviceTask id="taskDraftMessage" name="Draft personalized&#10;outreach message" camunda:topic="claude-draft">
+      <documentation>Claude Code drafts a personalized first-touch email (150–200 words) referencing: specific alignment with prospect's work, one relevant IMAN impact stat, and a clear, low-friction ask (15-min call).</documentation>
+      <incoming>flowS4</incoming>
+      <outgoing>flowS5</outgoing>
+    </serviceTask>
+
+    <serviceTask id="taskPartnershipAgreement" name="Draft partnership&#10;agreement / MOU" camunda:topic="claude-draft">
+      <documentation>Claude Code drafts a Memorandum of Understanding covering: scope of collaboration, mutual commitments, timeline, contacts, and renewal terms. Coordinator reviews before sending.</documentation>
+      <incoming>flowRelPartner</incoming>
+      <outgoing>flowMerge2</outgoing>
+    </serviceTask>
+
+    <serviceTask id="taskUpdateKnowledge" name="Update Knowledge Map&#10;&amp; Data Library" camunda:topic="claude-update-kb">
+      <documentation>Claude Code updates the relevant IMAN Knowledge Map domain with new partner/funder intelligence, logs the relationship in the Data Library, and commits changes to GitHub.</documentation>
+      <incoming>flowS13</incoming>
+      <outgoing>flowToEnd</outgoing>
+    </serviceTask>
+
+    <!-- ═══════════════════════ GATEWAYS ══════════════════════ -->
+
+    <exclusiveGateway id="gatewayResponse" name="Response&#10;received?">
+      <incoming>flowS7</incoming>
+      <outgoing>flowResponseYes</outgoing>
+      <outgoing>flowResponseNo</outgoing>
+    </exclusiveGateway>
+
+    <exclusiveGateway id="gatewayAlignment" name="Strategic&#10;alignment?">
+      <incoming>flowS9</incoming>
+      <outgoing>flowAlignmentYes</outgoing>
+      <outgoing>flowNoFit</outgoing>
+    </exclusiveGateway>
+
+    <exclusiveGateway id="gatewayRelType" name="Relationship&#10;type?">
+      <incoming>flowAlignmentYes</incoming>
+      <outgoing>flowRelFunder</outgoing>
+      <outgoing>flowRelPartner</outgoing>
+      <outgoing>flowRelCommunity</outgoing>
+    </exclusiveGateway>
+
+    <!-- ═══════════════════════ SEQUENCE FLOWS ═════════════════ -->
+
+    <sequenceFlow id="flowS1"  sourceRef="startEvent2"          targetRef="taskImportSegment"/>
+    <sequenceFlow id="flowS2"  sourceRef="taskImportSegment"    targetRef="taskSelectProspect"/>
+    <sequenceFlow id="flowS3"  sourceRef="taskSelectProspect"   targetRef="taskResearch"/>
+    <sequenceFlow id="flowS4"  sourceRef="taskResearch"         targetRef="taskDraftMessage"/>
+    <sequenceFlow id="flowS5"  sourceRef="taskDraftMessage"     targetRef="taskReviewApprove"/>
+    <sequenceFlow id="flowS6"  sourceRef="taskReviewApprove"    targetRef="taskSendOutreach"/>
+    <sequenceFlow id="flowS7"  sourceRef="taskSendOutreach"     targetRef="gatewayResponse"/>
+
+    <sequenceFlow id="flowResponseYes" name="Yes"  sourceRef="gatewayResponse"  targetRef="taskIntroCall"/>
+    <sequenceFlow id="flowResponseNo"  name="No (3 attempts)" sourceRef="gatewayResponse" targetRef="taskMarkCold"/>
+    <sequenceFlow id="flowToCold"      sourceRef="taskMarkCold"      targetRef="endEventCold"/>
+
+    <sequenceFlow id="flowS9"          sourceRef="taskIntroCall"     targetRef="gatewayAlignment"/>
+    <sequenceFlow id="flowAlignmentYes" name="Yes" sourceRef="gatewayAlignment" targetRef="gatewayRelType"/>
+    <sequenceFlow id="flowNoFit"       name="No"   sourceRef="gatewayAlignment" targetRef="endEventNoFit"/>
+
+    <sequenceFlow id="flowRelFunder"    name="Funder"    sourceRef="gatewayRelType" targetRef="taskFundingProposal"/>
+    <sequenceFlow id="flowRelPartner"   name="Partner"   sourceRef="gatewayRelType" targetRef="taskPartnershipAgreement"/>
+    <sequenceFlow id="flowRelCommunity" name="Community" sourceRef="gatewayRelType" targetRef="taskOnboard"/>
+
+    <sequenceFlow id="flowMerge1" sourceRef="taskFundingProposal"     targetRef="taskUpdateCRM"/>
+    <sequenceFlow id="flowMerge2" sourceRef="taskPartnershipAgreement" targetRef="taskUpdateCRM"/>
+    <sequenceFlow id="flowMerge3" sourceRef="taskOnboard"              targetRef="taskUpdateCRM"/>
+
+    <sequenceFlow id="flowS13"   sourceRef="taskUpdateCRM"       targetRef="taskUpdateKnowledge"/>
+    <sequenceFlow id="flowToEnd" sourceRef="taskUpdateKnowledge" targetRef="endEventActive"/>
+
+  </process>
+
+  <!-- ═══════════════════════════════ DIAGRAM LAYOUT ═══════════════════════════ -->
+
+  <bpmndi:BPMNDiagram id="diagram2">
+    <bpmndi:BPMNPlane id="plane2" bpmnElement="collaboration2">
+
+      <!-- Pool -->
+      <bpmndi:BPMNShape id="shapePool2" bpmnElement="participant2" isHorizontal="true">
+        <dc:Bounds x="100" y="50" width="2560" height="600"/>
+      </bpmndi:BPMNShape>
+
+      <!-- Lane: Coordinator (top) -->
+      <bpmndi:BPMNShape id="shapeLaneCoord" bpmnElement="laneCoordinator" isHorizontal="true">
+        <dc:Bounds x="130" y="50"  width="2530" height="180"/>
+      </bpmndi:BPMNShape>
+
+      <!-- Lane: Claude (middle) -->
+      <bpmndi:BPMNShape id="shapeLaneClaude2" bpmnElement="laneClaude" isHorizontal="true">
+        <dc:Bounds x="130" y="230" width="2530" height="170"/>
+      </bpmndi:BPMNShape>
+
+      <!-- Lane: Apollo/CRM (bottom) -->
+      <bpmndi:BPMNShape id="shapeLaneApollo" bpmnElement="laneApollo" isHorizontal="true">
+        <dc:Bounds x="130" y="400" width="2530" height="250"/>
+      </bpmndi:BPMNShape>
+
+      <!-- ── Apollo lane elements (center y = 525) ── -->
+
+      <bpmndi:BPMNShape id="shapeStart2" bpmnElement="startEvent2">
+        <dc:Bounds x="182" y="507" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="158" y="550" width="90" height="27"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeImport" bpmnElement="taskImportSegment">
+        <dc:Bounds x="260" y="495" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeSend" bpmnElement="taskSendOutreach">
+        <dc:Bounds x="1260" y="495" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeGwResponse" bpmnElement="gatewayResponse" isMarkerVisible="true">
+        <dc:Bounds x="1475" y="500" width="50" height="50"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1455" y="557" width="90" height="27"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeMarkCold" bpmnElement="taskMarkCold">
+        <dc:Bounds x="1580" y="495" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeEndCold" bpmnElement="endEventCold">
+        <dc:Bounds x="1792" y="507" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1768" y="550" width="90" height="27"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeOnboard" bpmnElement="taskOnboard">
+        <dc:Bounds x="2110" y="495" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeUpdateCRM" bpmnElement="taskUpdateCRM">
+        <dc:Bounds x="2310" y="495" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeEndActive" bpmnElement="endEventActive">
+        <dc:Bounds x="2522" y="507" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2498" y="550" width="90" height="27"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <!-- ── Coordinator lane elements (center y = 140) ── -->
+
+      <bpmndi:BPMNShape id="shapeSelectProspect" bpmnElement="taskSelectProspect">
+        <dc:Bounds x="460" y="110" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeReviewApprove" bpmnElement="taskReviewApprove">
+        <dc:Bounds x="1060" y="110" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeIntroCall" bpmnElement="taskIntroCall">
+        <dc:Bounds x="1580" y="110" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeGwAlignment" bpmnElement="gatewayAlignment" isMarkerVisible="true">
+        <dc:Bounds x="1800" y="115" width="50" height="50"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1778" y="172" width="95" height="27"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeGwRelType" bpmnElement="gatewayRelType" isMarkerVisible="true">
+        <dc:Bounds x="1940" y="115" width="50" height="50"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1918" y="172" width="95" height="27"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeFundingProposal" bpmnElement="taskFundingProposal">
+        <dc:Bounds x="2040" y="110" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <!-- ── Claude lane elements (center y = 315) ── -->
+
+      <bpmndi:BPMNShape id="shapeResearch" bpmnElement="taskResearch">
+        <dc:Bounds x="660" y="285" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeDraftMessage" bpmnElement="taskDraftMessage">
+        <dc:Bounds x="860" y="285" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapePartnership" bpmnElement="taskPartnershipAgreement">
+        <dc:Bounds x="2040" y="285" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeUpdateKB" bpmnElement="taskUpdateKnowledge">
+        <dc:Bounds x="2380" y="285" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeEndNoFit" bpmnElement="endEventNoFit">
+        <dc:Bounds x="1817" y="297" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1793" y="340" width="90" height="27"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <!-- ═══════════════════════════ EDGES ══════════════════════════════ -->
+
+      <!-- flowS1: Start → Import -->
+      <bpmndi:BPMNEdge id="edgeS1" bpmnElement="flowS1">
+        <di:waypoint x="218" y="525"/>
+        <di:waypoint x="260" y="525"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowS2: Import (Apollo) → Select Prospect (Coordinator, cross-lane up) -->
+      <bpmndi:BPMNEdge id="edgeS2" bpmnElement="flowS2">
+        <di:waypoint x="340" y="495"/>
+        <di:waypoint x="340" y="140"/>
+        <di:waypoint x="460" y="140"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowS3: Select Prospect (Coordinator) → Research (Claude, cross-lane down) -->
+      <bpmndi:BPMNEdge id="edgeS3" bpmnElement="flowS3">
+        <di:waypoint x="540" y="170"/>
+        <di:waypoint x="540" y="315"/>
+        <di:waypoint x="660" y="315"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowS4: Research → Draft Message -->
+      <bpmndi:BPMNEdge id="edgeS4" bpmnElement="flowS4">
+        <di:waypoint x="820" y="315"/>
+        <di:waypoint x="860" y="315"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowS5: Draft (Claude) → Review (Coordinator, cross-lane up) -->
+      <bpmndi:BPMNEdge id="edgeS5" bpmnElement="flowS5">
+        <di:waypoint x="940" y="285"/>
+        <di:waypoint x="940" y="140"/>
+        <di:waypoint x="1060" y="140"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowS6: Review (Coordinator) → Send (Apollo, cross-lane down) -->
+      <bpmndi:BPMNEdge id="edgeS6" bpmnElement="flowS6">
+        <di:waypoint x="1140" y="170"/>
+        <di:waypoint x="1140" y="525"/>
+        <di:waypoint x="1260" y="525"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowS7: Send → Gateway Response -->
+      <bpmndi:BPMNEdge id="edgeS7" bpmnElement="flowS7">
+        <di:waypoint x="1420" y="525"/>
+        <di:waypoint x="1475" y="525"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowResponseNo: Response Gateway → Mark Cold -->
+      <bpmndi:BPMNEdge id="edgeResponseNo" bpmnElement="flowResponseNo">
+        <di:waypoint x="1525" y="525"/>
+        <di:waypoint x="1580" y="525"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1530" y="507" width="50" height="27"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowToCold: Mark Cold → End Cold -->
+      <bpmndi:BPMNEdge id="edgeToCold" bpmnElement="flowToCold">
+        <di:waypoint x="1740" y="525"/>
+        <di:waypoint x="1792" y="525"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowResponseYes: Response Gateway → Intro Call (cross-lane up) -->
+      <bpmndi:BPMNEdge id="edgeResponseYes" bpmnElement="flowResponseYes">
+        <di:waypoint x="1500" y="500"/>
+        <di:waypoint x="1500" y="140"/>
+        <di:waypoint x="1580" y="140"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1508" y="310" width="20" height="14"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowS9: Intro Call → Gateway Alignment -->
+      <bpmndi:BPMNEdge id="edgeS9" bpmnElement="flowS9">
+        <di:waypoint x="1740" y="140"/>
+        <di:waypoint x="1800" y="140"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowNoFit: Alignment Gateway → End No Fit (cross-lane down) -->
+      <bpmndi:BPMNEdge id="edgeNoFit" bpmnElement="flowNoFit">
+        <di:waypoint x="1825" y="165"/>
+        <di:waypoint x="1825" y="297"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1833" y="220" width="20" height="14"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowAlignmentYes: Alignment → Rel Type Gateway -->
+      <bpmndi:BPMNEdge id="edgeAlignmentYes" bpmnElement="flowAlignmentYes">
+        <di:waypoint x="1850" y="140"/>
+        <di:waypoint x="1940" y="140"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1870" y="122" width="20" height="14"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowRelFunder: Rel Type → Funding Proposal (Coordinator) -->
+      <bpmndi:BPMNEdge id="edgeRelFunder" bpmnElement="flowRelFunder">
+        <di:waypoint x="1990" y="140"/>
+        <di:waypoint x="2040" y="140"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1998" y="122" width="40" height="14"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowRelPartner: Rel Type → Partnership Agreement (Claude, cross-lane down) -->
+      <bpmndi:BPMNEdge id="edgeRelPartner" bpmnElement="flowRelPartner">
+        <di:waypoint x="1965" y="165"/>
+        <di:waypoint x="1965" y="315"/>
+        <di:waypoint x="2040" y="315"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1973" y="230" width="40" height="14"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowRelCommunity: Rel Type → Onboard (Apollo, cross-lane down) -->
+      <bpmndi:BPMNEdge id="edgeRelCommunity" bpmnElement="flowRelCommunity">
+        <di:waypoint x="1965" y="165"/>
+        <di:waypoint x="1965" y="525"/>
+        <di:waypoint x="2110" y="525"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1973" y="435" width="60" height="14"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowMerge1: Funding Proposal (Coordinator) → Update CRM (Apollo) -->
+      <bpmndi:BPMNEdge id="edgeMerge1" bpmnElement="flowMerge1">
+        <di:waypoint x="2200" y="140"/>
+        <di:waypoint x="2390" y="140"/>
+        <di:waypoint x="2390" y="495"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowMerge2: Partnership (Claude) → Update CRM (Apollo) -->
+      <bpmndi:BPMNEdge id="edgeMerge2" bpmnElement="flowMerge2">
+        <di:waypoint x="2200" y="315"/>
+        <di:waypoint x="2390" y="315"/>
+        <di:waypoint x="2390" y="495"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowMerge3: Onboard → Update CRM -->
+      <bpmndi:BPMNEdge id="edgeMerge3" bpmnElement="flowMerge3">
+        <di:waypoint x="2270" y="525"/>
+        <di:waypoint x="2310" y="525"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowS13: Update CRM → Update Knowledge (Claude, cross-lane up) -->
+      <bpmndi:BPMNEdge id="edgeS13" bpmnElement="flowS13">
+        <di:waypoint x="2470" y="495"/>
+        <di:waypoint x="2460" y="315"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowToEnd: Update Knowledge (Claude) → End Active (Apollo, cross-lane down) -->
+      <bpmndi:BPMNEdge id="edgeToEnd" bpmnElement="flowToEnd">
+        <di:waypoint x="2540" y="315"/>
+        <di:waypoint x="2540" y="507"/>
+      </bpmndi:BPMNEdge>
+
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+
+</definitions>
