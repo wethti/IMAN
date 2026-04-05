@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:camunda="http://camunda.org/schema/1.0/bpmn"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+             targetNamespace="http://iman.org/bpmn/research"
+             exporter="Claude Code"
+             exporterVersion="1.0">
+
+  <collaboration id="collaboration1">
+    <participant id="participant1" name="IMAN Research System" processRef="ResearchUpdateCycle"/>
+  </collaboration>
+
+  <process id="ResearchUpdateCycle" name="IMAN Research Update Cycle" isExecutable="true">
+
+    <laneSet id="laneSet1">
+      <lane id="laneResearcher" name="Researcher">
+        <flowNodeRef>startEvent1</flowNodeRef>
+        <flowNodeRef>taskSelectDomain</flowNodeRef>
+        <flowNodeRef>taskReviewSources</flowNodeRef>
+        <flowNodeRef>endEventNoUpdate</flowNodeRef>
+      </lane>
+      <lane id="laneClaude" name="Claude Code (AI Assistant)">
+        <flowNodeRef>taskReadFiles</flowNodeRef>
+        <flowNodeRef>taskSearchEvidence</flowNodeRef>
+        <flowNodeRef>gatewayEvidenceRelevant</flowNodeRef>
+        <flowNodeRef>taskUpdateEvidence</flowNodeRef>
+        <flowNodeRef>gatewayActionsRevision</flowNodeRef>
+        <flowNodeRef>taskUpdateActions</flowNodeRef>
+        <flowNodeRef>gatewayWorthPitching</flowNodeRef>
+        <flowNodeRef>subprocessPitchDeck</flowNodeRef>
+      </lane>
+      <lane id="laneGitHub" name="GitHub">
+        <flowNodeRef>taskSaveCommit</flowNodeRef>
+        <flowNodeRef>endEventComplete</flowNodeRef>
+      </lane>
+    </laneSet>
+
+    <!-- ═══════════════════════════════ EVENTS ═══════════════════════════════ -->
+
+    <startEvent id="startEvent1" name="Research question&#10;identified">
+      <outgoing>flow1</outgoing>
+    </startEvent>
+
+    <endEvent id="endEventNoUpdate" name="No update&#10;needed">
+      <incoming>flowNoEvidence</incoming>
+    </endEvent>
+
+    <endEvent id="endEventComplete" name="Knowledge base&#10;updated">
+      <incoming>flowToEnd</incoming>
+    </endEvent>
+
+    <!-- ═══════════════════════════════ TASKS — Researcher ════════════════════ -->
+
+    <userTask id="taskSelectDomain" name="Select domain&#10;(9 Knowledge Map domains)" camunda:assignee="researcher">
+      <documentation>Choose one of the 9 IMAN Knowledge Map thematic domains: Violence Prevention, Economic Empowerment, Health, Civic Engagement, Criminal Justice Reform, Housing, Education, Immigration, Environmental Justice.</documentation>
+      <incoming>flow1</incoming>
+      <outgoing>flow2</outgoing>
+    </userTask>
+
+    <userTask id="taskReviewSources" name="Review and validate&#10;sources" camunda:assignee="researcher">
+      <documentation>Researcher reviews the evidence retrieved by Claude Code, validates relevance and quality, and approves proceeding to knowledge base update.</documentation>
+      <incoming>flowEvidenceYes</incoming>
+      <outgoing>flow4</outgoing>
+    </userTask>
+
+    <!-- ═══════════════════════════════ TASKS — Claude Code ══════════════════ -->
+
+    <serviceTask id="taskReadFiles" name="Read evidence_base.md&#10;+ action_list.md" camunda:type="external" camunda:topic="read-knowledge-files">
+      <documentation>Claude Code reads the current evidence_base.md and action_list.md for the selected domain to establish baseline understanding before searching for new evidence.</documentation>
+      <incoming>flow2</incoming>
+      <outgoing>flow3</outgoing>
+    </serviceTask>
+
+    <serviceTask id="taskSearchEvidence" name="Web search /&#10;academic search" camunda:type="external" camunda:topic="search-evidence">
+      <documentation>Claude Code performs web searches and academic literature searches for new evidence relevant to the selected domain. Sources: PubMed, Google Scholar, policy databases, news sources.</documentation>
+      <incoming>flow3</incoming>
+      <outgoing>flowToGateway1</outgoing>
+    </serviceTask>
+
+    <serviceTask id="taskUpdateEvidence" name="Update&#10;evidence_base.md" camunda:type="external" camunda:topic="update-evidence-file">
+      <documentation>Claude Code appends validated new findings to evidence_base.md in the Knowledge Map domain folder, including citations, key statistics, and relevance notes.</documentation>
+      <incoming>flow4</incoming>
+      <outgoing>flowToGateway2</outgoing>
+    </serviceTask>
+
+    <serviceTask id="taskUpdateActions" name="Update&#10;action_list.md" camunda:type="external" camunda:topic="update-action-file">
+      <documentation>Claude Code revises action_list.md to reflect updated evidence — adding, removing, or reprioritizing recommended initiatives for the domain.</documentation>
+      <incoming>flowActionsYes</incoming>
+      <outgoing>flowToGateway3</outgoing>
+    </serviceTask>
+
+    <!-- ═══════════════════════════════ GATEWAYS ═════════════════════════════ -->
+
+    <exclusiveGateway id="gatewayEvidenceRelevant" name="Evidence&#10;relevant?">
+      <incoming>flowToGateway1</incoming>
+      <outgoing>flowEvidenceYes</outgoing>
+      <outgoing>flowNoEvidence</outgoing>
+    </exclusiveGateway>
+
+    <exclusiveGateway id="gatewayActionsRevision" name="Actions need&#10;revision?">
+      <incoming>flowToGateway2</incoming>
+      <outgoing>flowActionsYes</outgoing>
+      <outgoing>flowActionsNo</outgoing>
+    </exclusiveGateway>
+
+    <exclusiveGateway id="gatewayWorthPitching" name="Worth&#10;pitching?">
+      <incoming>flowActionsNo</incoming>
+      <incoming>flowToGateway3</incoming>
+      <outgoing>flowPitchYes</outgoing>
+      <outgoing>flowPitchNo</outgoing>
+    </exclusiveGateway>
+
+    <!-- ═══════════════════════════════ SUBPROCESS — Pitch Deck ══════════════ -->
+
+    <subProcess id="subprocessPitchDeck" name="Generate Pitch Deck">
+      <incoming>flowPitchYes</incoming>
+      <outgoing>flowAfterPitch</outgoing>
+
+      <startEvent id="subStart" name="Start">
+        <outgoing>subFlow1</outgoing>
+      </startEvent>
+
+      <serviceTask id="subTaskMarkdown" name="Generate pitch deck&#10;markdown (pitch-deck skill)">
+        <incoming>subFlow1</incoming>
+        <outgoing>subFlow2</outgoing>
+      </serviceTask>
+
+      <serviceTask id="subTaskHTML" name="Convert to HTML&#10;presentation (frontend-slides skill)">
+        <incoming>subFlow2</incoming>
+        <outgoing>subFlow3</outgoing>
+      </serviceTask>
+
+      <serviceTask id="subTaskPDF" name="Export PDF&#10;(export-pdf.sh / Playwright)">
+        <incoming>subFlow3</incoming>
+        <outgoing>subFlow4</outgoing>
+      </serviceTask>
+
+      <serviceTask id="subTaskPPTX" name="Export PPTX&#10;(build_pptx.py / python-pptx)">
+        <incoming>subFlow4</incoming>
+        <outgoing>subFlow5</outgoing>
+      </serviceTask>
+
+      <endEvent id="subEnd" name="End">
+        <incoming>subFlow5</incoming>
+      </endEvent>
+
+      <sequenceFlow id="subFlow1" sourceRef="subStart" targetRef="subTaskMarkdown"/>
+      <sequenceFlow id="subFlow2" sourceRef="subTaskMarkdown" targetRef="subTaskHTML"/>
+      <sequenceFlow id="subFlow3" sourceRef="subTaskHTML" targetRef="subTaskPDF"/>
+      <sequenceFlow id="subFlow4" sourceRef="subTaskPDF" targetRef="subTaskPPTX"/>
+      <sequenceFlow id="subFlow5" sourceRef="subTaskPPTX" targetRef="subEnd"/>
+    </subProcess>
+
+    <!-- ═══════════════════════════════ TASKS — GitHub ═══════════════════════ -->
+
+    <serviceTask id="taskSaveCommit" name="git commit + push&#10;to GitHub (save skill)" camunda:type="external" camunda:topic="git-save">
+      <documentation>Claude Code stages all modified files, generates a descriptive commit message, commits, and pushes to origin/main via the /save skill.</documentation>
+      <incoming>flowPitchNo</incoming>
+      <incoming>flowAfterPitch</incoming>
+      <outgoing>flowToEnd</outgoing>
+    </serviceTask>
+
+    <!-- ═══════════════════════════════ SEQUENCE FLOWS ════════════════════════ -->
+
+    <sequenceFlow id="flow1" sourceRef="startEvent1" targetRef="taskSelectDomain"/>
+    <sequenceFlow id="flow2" sourceRef="taskSelectDomain" targetRef="taskReadFiles"/>
+    <sequenceFlow id="flow3" sourceRef="taskReadFiles" targetRef="taskSearchEvidence"/>
+    <sequenceFlow id="flowToGateway1" sourceRef="taskSearchEvidence" targetRef="gatewayEvidenceRelevant"/>
+    <sequenceFlow id="flowEvidenceYes" name="Yes" sourceRef="gatewayEvidenceRelevant" targetRef="taskReviewSources"/>
+    <sequenceFlow id="flowNoEvidence" name="No" sourceRef="gatewayEvidenceRelevant" targetRef="endEventNoUpdate"/>
+    <sequenceFlow id="flow4" sourceRef="taskReviewSources" targetRef="taskUpdateEvidence"/>
+    <sequenceFlow id="flowToGateway2" sourceRef="taskUpdateEvidence" targetRef="gatewayActionsRevision"/>
+    <sequenceFlow id="flowActionsYes" name="Yes" sourceRef="gatewayActionsRevision" targetRef="taskUpdateActions"/>
+    <sequenceFlow id="flowActionsNo" name="No" sourceRef="gatewayActionsRevision" targetRef="gatewayWorthPitching"/>
+    <sequenceFlow id="flowToGateway3" sourceRef="taskUpdateActions" targetRef="gatewayWorthPitching"/>
+    <sequenceFlow id="flowPitchYes" name="Yes" sourceRef="gatewayWorthPitching" targetRef="subprocessPitchDeck"/>
+    <sequenceFlow id="flowPitchNo" name="No" sourceRef="gatewayWorthPitching" targetRef="taskSaveCommit"/>
+    <sequenceFlow id="flowAfterPitch" sourceRef="subprocessPitchDeck" targetRef="taskSaveCommit"/>
+    <sequenceFlow id="flowToEnd" sourceRef="taskSaveCommit" targetRef="endEventComplete"/>
+
+  </process>
+
+  <!-- ═══════════════════════════════ DIAGRAM LAYOUT ═══════════════════════════ -->
+
+  <bpmndi:BPMNDiagram id="diagram1">
+    <bpmndi:BPMNPlane id="plane1" bpmnElement="collaboration1">
+
+      <!-- Pool -->
+      <bpmndi:BPMNShape id="shapeParticipant" bpmnElement="participant1" isHorizontal="true">
+        <dc:Bounds x="100" y="50" width="2320" height="550"/>
+      </bpmndi:BPMNShape>
+
+      <!-- Lane: Researcher -->
+      <bpmndi:BPMNShape id="shapeResearcher" bpmnElement="laneResearcher" isHorizontal="true">
+        <dc:Bounds x="130" y="50" width="2290" height="170"/>
+      </bpmndi:BPMNShape>
+
+      <!-- Lane: Claude Code -->
+      <bpmndi:BPMNShape id="shapeClaude" bpmnElement="laneClaude" isHorizontal="true">
+        <dc:Bounds x="130" y="220" width="2290" height="220"/>
+      </bpmndi:BPMNShape>
+
+      <!-- Lane: GitHub -->
+      <bpmndi:BPMNShape id="shapeGitHub" bpmnElement="laneGitHub" isHorizontal="true">
+        <dc:Bounds x="130" y="440" width="2290" height="160"/>
+      </bpmndi:BPMNShape>
+
+      <!-- ── Researcher lane elements (center y = 135) ── -->
+
+      <bpmndi:BPMNShape id="shapeStart" bpmnElement="startEvent1">
+        <dc:Bounds x="182" y="117" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="158" y="160" width="90" height="27"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeSelectDomain" bpmnElement="taskSelectDomain">
+        <dc:Bounds x="260" y="105" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeEndNoUpdate" bpmnElement="endEventNoUpdate">
+        <dc:Bounds x="862" y="117" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="840" y="160" width="80" height="27"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeReviewSources" bpmnElement="taskReviewSources">
+        <dc:Bounds x="990" y="105" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <!-- ── Claude Code lane elements (center y = 330) ── -->
+
+      <bpmndi:BPMNShape id="shapeReadFiles" bpmnElement="taskReadFiles">
+        <dc:Bounds x="460" y="300" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeSearchEvidence" bpmnElement="taskSearchEvidence">
+        <dc:Bounds x="660" y="300" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeGatewayEvidence" bpmnElement="gatewayEvidenceRelevant" isMarkerVisible="true">
+        <dc:Bounds x="865" y="305" width="50" height="50"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="847" y="362" width="90" height="27"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeUpdateEvidence" bpmnElement="taskUpdateEvidence">
+        <dc:Bounds x="1190" y="300" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeGatewayActions" bpmnElement="gatewayActionsRevision" isMarkerVisible="true">
+        <dc:Bounds x="1395" y="305" width="50" height="50"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1373" y="362" width="95" height="27"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeUpdateActions" bpmnElement="taskUpdateActions">
+        <dc:Bounds x="1490" y="300" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeGatewayPitch" bpmnElement="gatewayWorthPitching" isMarkerVisible="true">
+        <dc:Bounds x="1700" y="305" width="50" height="50"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1678" y="362" width="95" height="27"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeSubprocess" bpmnElement="subprocessPitchDeck" isExpanded="false">
+        <dc:Bounds x="1800" y="295" width="200" height="70"/>
+      </bpmndi:BPMNShape>
+
+      <!-- ── GitHub lane elements (center y = 520) ── -->
+
+      <bpmndi:BPMNShape id="shapeSaveCommit" bpmnElement="taskSaveCommit">
+        <dc:Bounds x="2050" y="490" width="160" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shapeEndComplete" bpmnElement="endEventComplete">
+        <dc:Bounds x="2262" y="502" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2238" y="545" width="90" height="27"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <!-- ═══════════════════════════════ EDGES ═══════════════════════════════ -->
+
+      <!-- flow1: Start → Select Domain -->
+      <bpmndi:BPMNEdge id="edgeFlow1" bpmnElement="flow1">
+        <di:waypoint x="218" y="135"/>
+        <di:waypoint x="260" y="135"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flow2: Select Domain → Read Files (cross-lane, down) -->
+      <bpmndi:BPMNEdge id="edgeFlow2" bpmnElement="flow2">
+        <di:waypoint x="340" y="165"/>
+        <di:waypoint x="340" y="330"/>
+        <di:waypoint x="460" y="330"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flow3: Read Files → Search Evidence -->
+      <bpmndi:BPMNEdge id="edgeFlow3" bpmnElement="flow3">
+        <di:waypoint x="620" y="330"/>
+        <di:waypoint x="660" y="330"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowToGateway1: Search Evidence → Evidence Gateway -->
+      <bpmndi:BPMNEdge id="edgeFlowToGateway1" bpmnElement="flowToGateway1">
+        <di:waypoint x="820" y="330"/>
+        <di:waypoint x="865" y="330"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowNoEvidence: Evidence Gateway → End No Update (left, then up) -->
+      <bpmndi:BPMNEdge id="edgeFlowNoEvidence" bpmnElement="flowNoEvidence">
+        <di:waypoint x="865" y="330"/>
+        <di:waypoint x="880" y="330"/>
+        <di:waypoint x="880" y="153"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="858" y="235" width="20" height="14"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowEvidenceYes: Evidence Gateway → Review Sources (up to Researcher lane) -->
+      <bpmndi:BPMNEdge id="edgeFlowEvidenceYes" bpmnElement="flowEvidenceYes">
+        <di:waypoint x="915" y="330"/>
+        <di:waypoint x="1070" y="330"/>
+        <di:waypoint x="1070" y="165"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="978" y="312" width="20" height="14"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- flow4: Review Sources → Update Evidence (cross-lane, down) -->
+      <bpmndi:BPMNEdge id="edgeFlow4" bpmnElement="flow4">
+        <di:waypoint x="1150" y="165"/>
+        <di:waypoint x="1150" y="330"/>
+        <di:waypoint x="1190" y="330"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowToGateway2: Update Evidence → Actions Gateway -->
+      <bpmndi:BPMNEdge id="edgeFlowToGateway2" bpmnElement="flowToGateway2">
+        <di:waypoint x="1350" y="330"/>
+        <di:waypoint x="1395" y="330"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowActionsYes: Actions Gateway → Update Actions -->
+      <bpmndi:BPMNEdge id="edgeFlowActionsYes" bpmnElement="flowActionsYes">
+        <di:waypoint x="1445" y="330"/>
+        <di:waypoint x="1490" y="330"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1452" y="312" width="20" height="14"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowActionsNo: Actions Gateway → Pitch Gateway (skip, route below) -->
+      <bpmndi:BPMNEdge id="edgeFlowActionsNo" bpmnElement="flowActionsNo">
+        <di:waypoint x="1420" y="355"/>
+        <di:waypoint x="1420" y="410"/>
+        <di:waypoint x="1725" y="410"/>
+        <di:waypoint x="1725" y="355"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1558" y="392" width="20" height="14"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowToGateway3: Update Actions → Pitch Gateway -->
+      <bpmndi:BPMNEdge id="edgeFlowToGateway3" bpmnElement="flowToGateway3">
+        <di:waypoint x="1650" y="330"/>
+        <di:waypoint x="1700" y="330"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowPitchYes: Pitch Gateway → Subprocess -->
+      <bpmndi:BPMNEdge id="edgeFlowPitchYes" bpmnElement="flowPitchYes">
+        <di:waypoint x="1750" y="330"/>
+        <di:waypoint x="1800" y="330"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1757" y="312" width="20" height="14"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowPitchNo: Pitch Gateway → Save Commit (cross-lane, down) -->
+      <bpmndi:BPMNEdge id="edgeFlowPitchNo" bpmnElement="flowPitchNo">
+        <di:waypoint x="1725" y="355"/>
+        <di:waypoint x="1725" y="520"/>
+        <di:waypoint x="2050" y="520"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1733" y="430" width="20" height="14"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowAfterPitch: Subprocess → Save Commit (cross-lane, down) -->
+      <bpmndi:BPMNEdge id="edgeFlowAfterPitch" bpmnElement="flowAfterPitch">
+        <di:waypoint x="2000" y="330"/>
+        <di:waypoint x="2130" y="330"/>
+        <di:waypoint x="2130" y="490"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- flowToEnd: Save Commit → End Complete -->
+      <bpmndi:BPMNEdge id="edgeFlowToEnd" bpmnElement="flowToEnd">
+        <di:waypoint x="2210" y="520"/>
+        <di:waypoint x="2262" y="520"/>
+      </bpmndi:BPMNEdge>
+
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+
+</definitions>
