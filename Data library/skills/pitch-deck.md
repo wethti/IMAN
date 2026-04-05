@@ -205,13 +205,13 @@ Then generate the pitch deck using the slide structure below. Pull in relevant e
 
 ## Output Format
 
-Generate the pitch deck as a markdown document with:
+Generate the pitch deck as a .pptx document with:
 - Each slide as a `## Slide [N] — [Title]` section
 - Content written as ready-to-use copy (not as instructions)
 - Placeholders in [brackets] where real data, photos, or project-specific details are needed
 - A "Designer Notes" line at the bottom of each slide for layout/visual guidance
 - A summary table at the top listing: Program Name, Target Population, Geography, # of Slides, Key Ask (funding amount or partnership type if known)
-- Read and follow the skill at "./Data library/skills/frontend-slides/SKILL.md" to turn the markdown document into a PDF presentation
+- Read and follow the skill at "./Data library/skills/frontend-slides/SKILL.md" to design the slides
 
 ## Constraints
 - Write in IMAN's voice: dignified, community-centered, bold, faith-informed but secular-serving
