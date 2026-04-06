@@ -1,0 +1,2190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMAN Fresh Market: Chicago Lawn — Pitch Deck 2026</title>
+
+<!-- Fonts: Archivo (display) + Nunito (body) — Swiss Modern preset -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700;800;900&family=Nunito:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===========================================
+   CSS CUSTOM PROPERTIES — SWISS MODERN / IMAN
+   IMAN Green replaces the standard red accent
+   to honor Go Green branding throughout.
+   =========================================== */
+:root {
+  /* Core palette */
+  --bg-white:     #ffffff;
+  --bg-off:       #f5f5f5;
+  --bg-black:     #0a0a0a;
+  --bg-dark:      #141414;
+  --text-primary: #0a0a0a;
+  --text-light:   #ffffff;
+  --text-mid:     #555555;
+  --text-muted:   #999999;
+
+  /* IMAN accent — forest green */
+  --accent:       #2e7d48;
+  --accent-light: #3d9e5f;
+  --accent-pale:  #e8f5ed;
+  --accent-dark:  #1a5230;
+
+  /* Grid rules */
+  --rule:         #e0e0e0;
+  --rule-dark:    #2a2a2a;
+
+  /* Typography — Swiss Modern */
+  --font-display: 'Archivo', sans-serif;
+  --font-body:    'Nunito', sans-serif;
+
+  /* Sizes — all clamp() */
+  --title-size:    clamp(2rem, 5.5vw, 5rem);
+  --h2-size:       clamp(1.4rem, 3.5vw, 2.8rem);
+  --h3-size:       clamp(1rem, 2.2vw, 1.6rem);
+  --body-size:     clamp(0.75rem, 1.4vw, 1rem);
+  --small-size:    clamp(0.6rem, 0.95vw, 0.75rem);
+  --label-size:    clamp(0.5rem, 0.8vw, 0.65rem);
+
+  /* Spacing */
+  --slide-padding: clamp(1.5rem, 4vw, 4rem);
+  --content-gap:   clamp(0.8rem, 2vw, 2rem);
+  --element-gap:   clamp(0.4rem, 1vw, 1rem);
+
+  /* Animation */
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur: 0.65s;
+}
+
+/* ===========================================
+   BASE RESET
+   =========================================== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--bg-off);
+}
+
+/* ===========================================
+   VIEWPORT BASE CSS — MANDATORY (from viewport-base.css)
+   =========================================== */
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.slide-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 100%;
+  overflow: hidden;
+  padding: var(--slide-padding);
+}
+
+.card, .container, .content-box {
+  max-width: min(90vw, 1000px);
+  max-height: min(80vh, 700px);
+}
+
+.feature-list, .bullet-list {
+  gap: clamp(0.4rem, 1vh, 1rem);
+}
+.feature-list li, .bullet-list li {
+  font-size: var(--body-size);
+  line-height: 1.4;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+img, .image-container {
+  max-width: 100%;
+  max-height: min(50vh, 400px);
+  object-fit: contain;
+}
+
+/* Short viewports */
+@media (max-height: 700px) {
+  :root {
+    --slide-padding: clamp(0.75rem, 3vw, 2rem);
+    --content-gap: clamp(0.4rem, 1.5vw, 1rem);
+    --title-size: clamp(1.5rem, 4.5vw, 2.8rem);
+    --h2-size: clamp(1rem, 3vw, 1.8rem);
+  }
+}
+@media (max-height: 600px) {
+  :root {
+    --slide-padding: clamp(0.5rem, 2.5vw, 1.5rem);
+    --content-gap: clamp(0.3rem, 1vw, 0.75rem);
+    --title-size: clamp(1.1rem, 4vw, 2rem);
+    --body-size: clamp(0.65rem, 1.2vw, 0.9rem);
+  }
+  .nav-dots, .keyboard-hint, .decorative { display: none; }
+}
+@media (max-height: 500px) {
+  :root {
+    --slide-padding: clamp(0.4rem, 2vw, 1rem);
+    --title-size: clamp(1rem, 3.5vw, 1.5rem);
+    --h2-size: clamp(0.9rem, 2.5vw, 1.25rem);
+    --body-size: clamp(0.65rem, 1vw, 0.8rem);
+  }
+}
+@media (max-width: 600px) {
+  :root { --title-size: clamp(1.5rem, 7vw, 2.5rem); }
+  .grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.2s !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+/* ===========================================
+   SHARED ANIMATION SYSTEM
+   .visible is added by IntersectionObserver
+   =========================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--dur) var(--ease-expo),
+              transform var(--dur) var(--ease-expo);
+}
+.slide.visible .reveal { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity var(--dur) var(--ease-expo), transform var(--dur) var(--ease-expo);
+}
+.slide.visible .reveal-left { opacity: 1; transform: translateX(0); }
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity var(--dur) var(--ease-expo), transform var(--dur) var(--ease-expo);
+}
+.slide.visible .reveal-scale { opacity: 1; transform: scale(1); }
+
+/* Stagger delays for sequential reveals */
+.d1 { transition-delay: 0.05s; }
+.d2 { transition-delay: 0.15s; }
+.d3 { transition-delay: 0.25s; }
+.d4 { transition-delay: 0.35s; }
+.d5 { transition-delay: 0.45s; }
+.d6 { transition-delay: 0.55s; }
+
+/* ===========================================
+   SHARED LAYOUT COMPONENTS
+   =========================================== */
+
+/* Progress bar at top */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+  z-index: 100;
+}
+
+/* Navigation dots */
+.nav-dots {
+  position: fixed;
+  right: clamp(8px, 2vw, 20px);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 0.8vh, 8px);
+  z-index: 100;
+}
+.nav-dot {
+  width: clamp(5px, 0.6vw, 7px);
+  height: clamp(5px, 0.6vw, 7px);
+  border-radius: 50%;
+  background: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s;
+}
+.nav-dot.active { background: var(--accent); transform: scale(1.3); }
+
+/* Slide number label */
+.slide-num {
+  font-family: var(--font-display);
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* Section label (top eyebrow) */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: var(--element-gap);
+}
+.eyebrow-line {
+  width: 28px;
+  height: 2px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.eyebrow-text {
+  font-family: var(--font-display);
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Rule line */
+.rule {
+  height: 1px;
+  background: var(--rule);
+  margin: var(--element-gap) 0;
+}
+.rule-dark { background: var(--rule-dark); }
+
+/* Stat card — large number + label */
+.stat-block { }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--bg-white);
+}
+.stat-num sup {
+  font-size: 0.45em;
+  font-weight: 700;
+  color: var(--accent-light);
+  vertical-align: super;
+}
+.stat-label {
+  font-size: var(--small-size);
+  font-weight: 400;
+  color: #aaa;
+  margin-top: 0.3rem;
+  line-height: 1.3;
+}
+
+/* Tag pill */
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  font-family: var(--font-display);
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--accent);
+  color: var(--bg-white);
+}
+.tag-outline {
+  background: transparent;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+}
+.tag-dark {
+  background: var(--bg-black);
+  color: var(--bg-white);
+}
+
+/* ============================================
+   SLIDE 1 — COVER
+   Split grid: heavy type left, stats panel right
+   ============================================ */
+#s1 {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  background: var(--bg-white);
+}
+
+#s1 .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--slide-padding);
+  border-right: 1px solid var(--rule);
+  overflow: hidden;
+}
+
+#s1 .top-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+#s1 h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.2rem, 6.5vw, 5.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#s1 h1 .accent-word { color: var(--accent); }
+
+#s1 .tagline {
+  font-size: var(--body-size);
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.6;
+  max-width: 380px;
+  margin-bottom: 1rem;
+}
+
+#s1 .bottom-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+#s1 .right {
+  background: var(--bg-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--slide-padding);
+  overflow: hidden;
+}
+
+#s1 .right-label {
+  font-family: var(--font-display);
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+}
+
+#s1 .stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  flex: 1;
+  align-content: center;
+}
+
+#s1 .right-footer {
+  border-top: 1px solid var(--rule-dark);
+  padding-top: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#s1 .org-name {
+  font-family: var(--font-display);
+  font-size: var(--label-size);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666;
+}
+
+/* ============================================
+   SLIDE 2 — MISSION STATEMENT
+   Full-bleed white, centered oversized type
+   ============================================ */
+#s2 {
+  background: var(--bg-white);
+  display: flex;
+  align-items: center;
+}
+
+#s2 .slide-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#s2 .mission-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 3vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+#s2 .mission-text strong {
+  font-weight: 900;
+  color: var(--accent);
+}
+
+#s2 .mission-text em {
+  font-style: normal;
+  font-weight: 900;
+  color: var(--text-primary);
+}
+
+/* ============================================
+   SLIDE 3 — THE PROBLEM
+   Left text + right dark data column
+   ============================================ */
+#s3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--bg-white);
+}
+
+#s3 .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--slide-padding);
+  border-right: 1px solid var(--rule);
+  gap: var(--element-gap);
+}
+
+#s3 h2 {
+  font-family: var(--font-display);
+  font-size: var(--h2-size);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+#s3 .body-text {
+  font-size: var(--body-size);
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--text-mid);
+  max-width: 420px;
+}
+
+#s3 .body-text strong {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+#s3 .right {
+  background: var(--bg-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--slide-padding);
+  gap: clamp(1.2rem, 3vh, 2.5rem);
+  overflow: hidden;
+}
+
+#s3 .problem-stat {
+  padding-bottom: clamp(0.8rem, 2vh, 1.6rem);
+  border-bottom: 1px solid var(--rule-dark);
+}
+#s3 .problem-stat:last-child { border-bottom: none; padding-bottom: 0; }
+
+#s3 .problem-num {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--bg-white);
+}
+
+#s3 .problem-num .accent-unit {
+  font-size: 0.45em;
+  color: var(--accent-light);
+  font-weight: 700;
+}
+
+#s3 .problem-desc {
+  font-size: var(--small-size);
+  font-weight: 400;
+  color: #888;
+  margin-top: 0.3rem;
+  line-height: 1.4;
+}
+
+/* ============================================
+   SLIDE 4 — PROGRAM COMPONENTS
+   Three-column grid with icon labels
+   ============================================ */
+#s4 {
+  background: var(--bg-white);
+  display: flex;
+  flex-direction: column;
+}
+
+#s4 .top-bar {
+  padding: var(--slide-padding) var(--slide-padding) 0;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: clamp(0.8rem, 2vh, 1.5rem);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+#s4 h2 {
+  font-family: var(--font-display);
+  font-size: var(--h2-size);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+#s4 .pillars {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow: hidden;
+}
+
+#s4 .pillar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1rem, 2.5vw, 2.5rem);
+  border-right: 1px solid var(--rule);
+  overflow: hidden;
+}
+#s4 .pillar:last-child { border-right: none; }
+
+#s4 .pillar-num {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--rule);
+}
+
+#s4 .pillar-name {
+  font-family: var(--font-display);
+  font-size: clamp(0.9rem, 2vw, 1.4rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+#s4 .pillar-desc {
+  font-size: var(--small-size);
+  font-weight: 400;
+  color: var(--text-mid);
+  line-height: 1.55;
+  margin-top: 0.4rem;
+}
+
+#s4 .pillar-tag {
+  margin-top: 0.8rem;
+}
+
+#s4 .pillar.active-pillar .pillar-num { color: var(--accent-pale); }
+
+/* ============================================
+   SLIDE 5 — THEORY OF CHANGE
+   Black full-bleed, center statement
+   ============================================ */
+#s5 {
+  background: var(--bg-black);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+#s5::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--rule-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--rule-dark) 1px, transparent 1px);
+  background-size: clamp(40px, 6vw, 80px) clamp(40px, 6vw, 80px);
+  opacity: 0.4;
+}
+
+#s5 .slide-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#s5 .toc-headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3.8vw, 3rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--bg-white);
+  line-height: 1;
+  margin-bottom: var(--content-gap);
+}
+
+#s5 .toc-headline .accent-word { color: var(--accent-light); }
+
+#s5 .toc-body {
+  font-size: var(--body-size);
+  font-weight: 300;
+  line-height: 1.75;
+  color: #aaa;
+  max-width: 680px;
+}
+
+#s5 .toc-body strong {
+  font-weight: 600;
+  color: var(--bg-white);
+}
+
+#s5 .toc-body em {
+  font-style: normal;
+  color: var(--accent-light);
+  font-weight: 600;
+}
+
+#s5 .if-then {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 3vw, 3rem);
+  margin-top: var(--content-gap);
+}
+
+#s5 .toc-col {
+  padding: clamp(0.8rem, 2vw, 1.5rem);
+  border: 1px solid var(--rule-dark);
+}
+
+#s5 .toc-col-label {
+  font-family: var(--font-display);
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+#s5 .toc-col-label.if { color: var(--accent-light); }
+#s5 .toc-col-label.then { color: #aaa; }
+
+#s5 .toc-col-text {
+  font-size: var(--small-size);
+  font-weight: 300;
+  color: #888;
+  line-height: 1.6;
+}
+#s5 .toc-col-text strong { color: #ccc; font-weight: 600; }
+
+/* ============================================
+   SLIDE 6 — A HOLISTIC APPROACH
+   Ecosystem grid connecting IMAN programs
+   ============================================ */
+#s6 {
+  background: var(--bg-white);
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+#s6 .left {
+  background: var(--accent);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--slide-padding);
+  overflow: hidden;
+}
+
+#s6 .left h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 3.2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: var(--bg-white);
+}
+
+#s6 .left .intro {
+  font-size: var(--body-size);
+  font-weight: 300;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+}
+
+#s6 .left .tag-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+#s6 .eco-tag {
+  font-family: var(--font-display);
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  background: rgba(255,255,255,0.15);
+  color: var(--bg-white);
+  display: inline-block;
+  width: fit-content;
+}
+
+#s6 .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--slide-padding);
+  gap: var(--element-gap);
+  overflow: hidden;
+}
+
+#s6 .integration {
+  display: flex;
+  gap: clamp(0.8rem, 2vw, 1.5rem);
+  padding-bottom: var(--element-gap);
+  border-bottom: 1px solid var(--rule);
+}
+#s6 .integration:last-child { border-bottom: none; padding-bottom: 0; }
+
+#s6 .int-num {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3vw, 2.2rem);
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 2.5rem;
+}
+
+#s6 .int-text {}
+#s6 .int-title {
+  font-family: var(--font-display);
+  font-size: clamp(0.8rem, 1.6vw, 1.1rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.25rem;
+}
+#s6 .int-desc {
+  font-size: var(--small-size);
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+
+/* ============================================
+   SLIDE 7 — PROVEN TRACK RECORD
+   Englewood Fresh Market outcomes
+   ============================================ */
+#s7 {
+  background: var(--bg-black);
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+#s7 .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--slide-padding);
+  border-right: 1px solid var(--rule-dark);
+  overflow: hidden;
+}
+
+#s7 h2 {
+  font-family: var(--font-display);
+  font-size: var(--h2-size);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--bg-white);
+}
+
+#s7 .outcomes-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1.5vh, 1.2rem);
+  flex: 1;
+  justify-content: center;
+  padding: var(--element-gap) 0;
+}
+
+#s7 .outcome-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  padding-bottom: clamp(0.4rem, 1vh, 0.9rem);
+  border-bottom: 1px solid var(--rule-dark);
+}
+#s7 .outcome-item:last-child { border-bottom: none; }
+
+#s7 .outcome-num {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3.5vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--bg-white);
+  flex-shrink: 0;
+  line-height: 1;
+}
+#s7 .outcome-num .acc { color: var(--accent-light); font-size: 0.6em; }
+
+#s7 .outcome-desc {
+  font-size: var(--small-size);
+  font-weight: 300;
+  color: #888;
+  line-height: 1.4;
+}
+#s7 .outcome-desc strong { color: #ccc; font-weight: 600; }
+
+#s7 .source-note {
+  font-size: clamp(0.5rem, 0.75vw, 0.6rem);
+  color: #555;
+  font-style: italic;
+}
+
+#s7 .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--slide-padding);
+  gap: var(--content-gap);
+  overflow: hidden;
+}
+
+#s7 .right-headline {
+  font-family: var(--font-display);
+  font-size: clamp(0.65rem, 1vw, 0.8rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+}
+
+#s7 .accent-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--bg-white);
+  text-transform: uppercase;
+}
+
+#s7 .accent-quote .accent-word { color: var(--accent-light); }
+
+#s7 .proof-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+#s7 .proof-tag {
+  font-size: var(--small-size);
+  color: #777;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+#s7 .proof-tag::before {
+  content: '▶';
+  color: var(--accent);
+  font-size: 0.5em;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   SLIDE 8 — FRESH BOOST: DIGNIFIED ACCESS
+   Success story callout
+   ============================================ */
+#s8 {
+  background: var(--bg-white);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#s8 .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--slide-padding);
+  border-right: 1px solid var(--rule);
+  overflow: hidden;
+}
+
+#s8 h2 {
+  font-family: var(--font-display);
+  font-size: var(--h2-size);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+#s8 .desc {
+  font-size: var(--body-size);
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.65;
+  flex: 1;
+  padding: var(--element-gap) 0;
+}
+
+#s8 .desc strong { font-weight: 700; color: var(--text-primary); }
+
+#s8 .boost-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#s8 .step {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+#s8 .step-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+#s8 .step-text {
+  font-size: var(--small-size);
+  font-weight: 400;
+  color: var(--text-mid);
+  line-height: 1.3;
+}
+
+#s8 .right {
+  background: var(--accent-pale);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--slide-padding);
+  gap: var(--content-gap);
+  overflow: hidden;
+}
+
+#s8 .callout-label {
+  font-family: var(--font-display);
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+}
+
+#s8 .callout-stat-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--element-gap);
+}
+
+#s8 .callout-stat {}
+#s8 .c-num {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900;
+  color: var(--accent-dark);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+#s8 .c-num sup { font-size: 0.45em; color: var(--accent); vertical-align: super; }
+#s8 .c-label {
+  font-size: var(--small-size);
+  font-weight: 400;
+  color: var(--accent);
+  margin-top: 0.2rem;
+  line-height: 1.3;
+}
+
+#s8 .expansion-box {
+  background: var(--accent);
+  color: var(--bg-white);
+  padding: clamp(0.8rem, 2vw, 1.4rem);
+}
+#s8 .exp-title {
+  font-family: var(--font-display);
+  font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+#s8 .exp-desc {
+  font-size: var(--small-size);
+  font-weight: 300;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.85);
+}
+
+/* ============================================
+   SLIDE 9 — A HEALING ECONOMY
+   Jobs + living wage + vendor model
+   ============================================ */
+#s9 {
+  background: var(--bg-black);
+  display: flex;
+  align-items: center;
+}
+
+#s9::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--rule-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--rule-dark) 1px, transparent 1px);
+  background-size: clamp(40px, 6vw, 80px) clamp(40px, 6vw, 80px);
+  opacity: 0.35;
+}
+
+#s9 .slide-content {
+  position: relative;
+  z-index: 1;
+}
+
+#s9 h2 {
+  font-family: var(--font-display);
+  font-size: var(--h2-size);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--bg-white);
+  margin-bottom: var(--content-gap);
+}
+
+#s9 .economy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(0.6rem, 2vw, 1.5rem);
+}
+
+#s9 .eco-card {
+  border: 1px solid var(--rule-dark);
+  padding: clamp(0.8rem, 2vw, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#s9 .eco-card-num {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4.5vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--bg-white);
+  line-height: 1;
+}
+#s9 .eco-card-num .acc { color: var(--accent-light); font-size: 0.55em; font-weight: 700; }
+
+#s9 .eco-card-title {
+  font-family: var(--font-display);
+  font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-light);
+}
+
+#s9 .eco-card-desc {
+  font-size: var(--small-size);
+  font-weight: 300;
+  color: #777;
+  line-height: 1.5;
+}
+#s9 .eco-card-desc strong { color: #bbb; font-weight: 600; }
+
+/* ============================================
+   SLIDE 10 — HIGHLIGHTS
+   Big impact numbers on white
+   ============================================ */
+#s10 {
+  background: var(--bg-white);
+  display: flex;
+  flex-direction: column;
+}
+
+#s10 .top-bar {
+  padding: var(--slide-padding) var(--slide-padding) 0;
+  padding-bottom: clamp(0.8rem, 2vh, 1.5rem);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+#s10 h2 {
+  font-family: var(--font-display);
+  font-size: var(--h2-size);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+#s10 .highlights-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow: hidden;
+}
+
+#s10 .highlight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1rem, 2.5vw, 2.5rem);
+  border-right: 1px solid var(--rule);
+  overflow: hidden;
+}
+#s10 .highlight:last-child { border-right: none; }
+
+#s10 .h-num {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5.5vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  line-height: 0.95;
+}
+#s10 .h-num .acc { color: var(--accent); }
+
+#s10 .h-label {
+  font-size: var(--small-size);
+  font-weight: 400;
+  color: var(--text-mid);
+  line-height: 1.4;
+  margin-top: 0.5rem;
+}
+
+#s10 .h-source {
+  font-size: clamp(0.5rem, 0.7vw, 0.6rem);
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+  font-style: italic;
+}
+
+/* ============================================
+   SLIDE 11 — BUILDING CHICAGO LAWN
+   Capital ask breakdown
+   ============================================ */
+#s11 {
+  background: var(--bg-white);
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+#s11 .left {
+  background: var(--accent);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--slide-padding);
+  overflow: hidden;
+}
+
+#s11 .left h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4.5vw, 3.8rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: var(--bg-white);
+}
+
+#s11 .ask-box {
+  background: rgba(0,0,0,0.2);
+  padding: clamp(0.8rem, 2vw, 1.4rem);
+}
+#s11 .ask-label {
+  font-family: var(--font-display);
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 0.4rem;
+}
+#s11 .ask-amount {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4.5vw, 3.8rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--bg-white);
+  line-height: 1;
+}
+#s11 .ask-desc {
+  font-size: var(--small-size);
+  font-weight: 300;
+  color: rgba(255,255,255,0.75);
+  margin-top: 0.4rem;
+  line-height: 1.5;
+}
+
+#s11 .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--slide-padding);
+  gap: var(--element-gap);
+  overflow: hidden;
+}
+
+#s11 .budget-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: var(--element-gap);
+  border-bottom: 1px solid var(--rule);
+}
+#s11 .budget-item:last-child { border-bottom: none; }
+
+#s11 .budget-pct {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+  line-height: 1;
+  min-width: clamp(3rem, 8vw, 7rem);
+  flex-shrink: 0;
+}
+
+#s11 .budget-detail {}
+#s11 .budget-title {
+  font-family: var(--font-display);
+  font-size: clamp(0.7rem, 1.4vw, 0.95rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+#s11 .budget-desc {
+  font-size: var(--small-size);
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.4;
+}
+
+/* ============================================
+   SLIDE 12 — ABOUT IMAN + CLOSE
+   Standard org boilerplate + call to action
+   ============================================ */
+#s12 {
+  background: var(--bg-black);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#s12 .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--slide-padding);
+  border-right: 1px solid var(--rule-dark);
+  overflow: hidden;
+}
+
+#s12 .about-label {
+  font-family: var(--font-display);
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+}
+
+#s12 .about-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.8vw, 2.2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--bg-white);
+}
+
+#s12 .about-paras {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex: 1;
+  justify-content: center;
+}
+
+#s12 .about-para {
+  font-size: var(--small-size);
+  font-weight: 300;
+  line-height: 1.65;
+  color: #888;
+}
+#s12 .about-para strong { color: #bbb; font-weight: 600; }
+
+#s12 .partner-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+#s12 .partner-chip {
+  font-family: var(--font-display);
+  font-size: clamp(0.45rem, 0.7vw, 0.58rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--rule-dark);
+  color: #666;
+}
+
+#s12 .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--slide-padding);
+  overflow: hidden;
+}
+
+#s12 .cta-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--content-gap);
+}
+
+#s12 .cta-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: var(--bg-white);
+}
+#s12 .cta-heading .accent-word { color: var(--accent-light); }
+
+#s12 .cta-desc {
+  font-size: var(--body-size);
+  font-weight: 300;
+  color: #777;
+  line-height: 1.6;
+  max-width: 340px;
+}
+#s12 .cta-desc strong { color: #ccc; font-weight: 600; }
+
+#s12 .cta-box {
+  background: var(--accent);
+  padding: clamp(0.8rem, 2vw, 1.4rem);
+}
+#s12 .cta-contact-label {
+  font-family: var(--font-display);
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 0.3rem;
+}
+#s12 .cta-contact {
+  font-family: var(--font-display);
+  font-size: clamp(0.8rem, 1.5vw, 1.1rem);
+  font-weight: 700;
+  color: var(--bg-white);
+  letter-spacing: 0.02em;
+}
+
+#s12 .bottom-rule {
+  border-top: 1px solid var(--rule-dark);
+  padding-top: 0.8rem;
+  font-family: var(--font-display);
+  font-size: clamp(0.45rem, 0.7vw, 0.58rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #444;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Progress bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Navigation dots -->
+<nav class="nav-dots" id="navDots" aria-label="Slide navigation"></nav>
+
+<!-- ==========================================
+     SLIDE 1 — COVER
+     ========================================== -->
+<section class="slide" id="s1" aria-label="Cover">
+
+  <div class="left">
+    <div class="top-meta reveal d1">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">IMAN Food Ecosystem Expansion</span>
+    </div>
+
+    <h1 class="reveal d2">
+      IMAN<br>
+      Fresh<br>
+      <span class="accent-word">Market</span><br>
+      Chicago<br>
+      Lawn
+    </h1>
+
+    <div>
+      <p class="tagline reveal d3">
+        A community-owned nonprofit grocery store bringing affordable, dignified food access to Chicago Lawn — built on IMAN's proven model.
+      </p>
+      <div class="bottom-meta reveal d4">
+        <span class="tag">2026 Pitch</span>
+        <span style="font-family:var(--font-display);font-size:var(--label-size);color:var(--text-muted);letter-spacing:0.08em;">Chicago Lawn · South Side, IL</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="right-label reveal d1">By the Numbers</div>
+
+    <div class="stats-grid">
+      <div class="stat-block reveal d2">
+        <div class="stat-num">60<sup>%</sup></div>
+        <div class="stat-label">Chicago Lawn residents at or below federal poverty level</div>
+      </div>
+      <div class="stat-block reveal d3">
+        <div class="stat-num">30<sup>yr</sup></div>
+        <div class="stat-label">life expectancy gap vs. high-income Chicago neighborhoods</div>
+      </div>
+      <div class="stat-block reveal d4">
+        <div class="stat-num">0.8<sup>yr</sup></div>
+        <div class="stat-label">estimated life expectancy gain from one grocery store in a food desert</div>
+      </div>
+      <div class="stat-block reveal d5">
+        <div class="stat-num">4<sup>yr</sup></div>
+        <div class="stat-label">proven track record at IMAN Englewood Fresh Market</div>
+      </div>
+    </div>
+
+    <div class="right-footer reveal d6">
+      <span class="org-name">Inner-City Muslim Action Network</span>
+      <span class="tag" style="font-size:clamp(0.45rem,0.7vw,0.58rem);">Est. 1997</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==========================================
+     SLIDE 2 — MISSION STATEMENT
+     ========================================== -->
+<section class="slide" id="s2" aria-label="Mission Statement">
+
+  <div class="slide-content">
+    <div class="eyebrow reveal d1">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Mission</span>
+    </div>
+
+    <p class="mission-text reveal d2">
+      IMAN Fresh Market: Chicago Lawn provides <strong>affordable, dignified grocery retail</strong> and wraparound food-security programs for <em>Chicago Lawn residents</em>, as a holistic approach to <strong>health equity, community healing, and neighborhood economic development</strong> on the South Side.
+    </p>
+
+    <div class="rule reveal d3"></div>
+
+    <p style="font-size:var(--body-size);font-weight:300;color:var(--text-mid);line-height:1.6;max-width:680px;" class="reveal d4">
+      Modeled on IMAN's Go Green Community Fresh Market in Englewood — four years operating, 9,000+ members, and a replicable proof-of-concept for what a nonprofit grocery store can do in a disinvested neighborhood.
+    </p>
+  </div>
+
+</section>
+
+<!-- ==========================================
+     SLIDE 3 — THE PROBLEM
+     ========================================== -->
+<section class="slide" id="s3" aria-label="The Problem">
+
+  <div class="left">
+    <div class="eyebrow reveal d1">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">The Problem</span>
+    </div>
+
+    <h2 class="reveal d2">
+      Chicago Lawn<br>is a food<br>desert.
+    </h2>
+
+    <div class="rule reveal d3"></div>
+
+    <p class="body-text reveal d4">
+      Chicago Lawn is among Chicago's most disinvested South Side neighborhoods. <strong>60% of residents live at or below the federal poverty line</strong> — yet the neighborhood lacks a full-service, affordable grocery store within reasonable distance.
+    </p>
+
+    <p class="body-text reveal d5" style="margin-top:0.6rem;">
+      Without access to fresh food, residents face elevated rates of cardiovascular disease, diabetes, and obesity — the same diet-related chronic conditions that drive the <strong>30-year life expectancy gap</strong> between Englewood, Chicago Lawn, and high-income Chicago neighborhoods.
+    </p>
+  </div>
+
+  <div class="right">
+    <div class="problem-stat reveal d1">
+      <div class="problem-num">60<span class="accent-unit">%</span></div>
+      <div class="problem-desc">of Chicago Lawn residents at or below federal poverty level — among Chicago's highest rates</div>
+    </div>
+    <div class="problem-stat reveal d2">
+      <div class="problem-num">30<span class="accent-unit">yr</span></div>
+      <div class="problem-desc">life expectancy gap between Englewood / Chicago Lawn and Streeterville — the starkest urban health divide in the US</div>
+    </div>
+    <div class="problem-stat reveal d3">
+      <div class="problem-num">0.8<span class="accent-unit">yr</span></div>
+      <div class="problem-desc">estimated life expectancy gain from introducing a grocery store in a comparable food desert — per PHRESH natural experiment evidence</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==========================================
+     SLIDE 4 — PROGRAM COMPONENTS
+     ========================================== -->
+<section class="slide" id="s4" aria-label="Program Components">
+
+  <div class="top-bar">
+    <div>
+      <div class="eyebrow reveal d1">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">The Model</span>
+      </div>
+      <h2 class="reveal d2">Three Pillars</h2>
+    </div>
+    <span class="tag reveal d2" style="margin-bottom:0.15rem;">Full-Service · Nonprofit · Community-Owned</span>
+  </div>
+
+  <div class="pillars">
+
+    <div class="pillar active-pillar reveal d2">
+      <div class="pillar-num">01</div>
+      <div>
+        <div class="pillar-name">Full-Service Grocery Retail</div>
+        <div class="pillar-desc">Fresh produce, meat, dairy, deli, and grocery staples — plus a halal-certified kitchen. 25+ local and BIPOC vendors prioritized in the supply chain. Living wages for all staff.</div>
+        <div class="pillar-tag"><span class="tag-outline tag">SNAP · WIC · EBT Accepted</span></div>
+      </div>
+    </div>
+
+    <div class="pillar reveal d3">
+      <div class="pillar-num">02</div>
+      <div>
+        <div class="pillar-name">Affordability Programs</div>
+        <div class="pillar-desc">Link Match doubles SNAP produce spending. Resident discount for Chicago Lawn households. Grant-funded subsidized staples (eggs, milk, bread, chicken) sold below cost. Loyalty rewards program.</div>
+        <div class="pillar-tag"><span class="tag-outline tag">Projected ~10% of sales subsidized</span></div>
+      </div>
+    </div>
+
+    <div class="pillar reveal d4">
+      <div class="pillar-num">03</div>
+      <div>
+        <div class="pillar-name">Fresh Boost &amp; Wrap&shy;around</div>
+        <div class="pillar-desc">In-store credit program for food-insecure households — preserving consumer dignity and choice. Integrated with IMAN's Health Center for food-is-medicine referrals and CHW outreach at every distribution day.</div>
+        <div class="pillar-tag"><span class="tag-outline tag">Greater Chicago Food Depository Partner</span></div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     SLIDE 5 — THEORY OF CHANGE
+     ========================================== -->
+<section class="slide" id="s5" aria-label="Theory of Change">
+
+  <div class="slide-content">
+    <div class="eyebrow reveal d1">
+      <div class="eyebrow-line" style="background:var(--accent-light);"></div>
+      <span class="eyebrow-text" style="color:var(--accent-light);">Theory of Change</span>
+    </div>
+
+    <p class="toc-headline reveal d2">
+      Everyone deserves to eat <span class="accent-word">well</span> —<br>and the neighborhood they<br>live in should not determine<br>whether they can.
+    </p>
+
+    <div class="if-then reveal d3">
+      <div class="toc-col">
+        <div class="toc-col-label if">If we provide</div>
+        <div class="toc-col-text">
+          <strong>A full-service grocery store</strong> with subsidized staples, SNAP matching, in-store food credit (Fresh Boost), CHW outreach, and integration with IMAN's health center — then Chicago Lawn residents gain access to the full nutrition and health infrastructure they currently lack.
+        </div>
+      </div>
+      <div class="toc-col">
+        <div class="toc-col-label then">Then residents experience</div>
+        <div class="toc-col-text">
+          Improved dietary quality and reduced food insecurity → lower rates of cardiovascular disease, diabetes, and diet-related chronic illness → measurable gains in life expectancy, family stability, and neighborhood vitality. <strong>Food access is infrastructure. Infrastructure is health.</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==========================================
+     SLIDE 6 — A HOLISTIC APPROACH
+     ========================================== -->
+<section class="slide" id="s6" aria-label="A Holistic Approach">
+
+  <div class="left">
+    <div class="reveal d1">
+      <h2>A<br>Holistic<br>Approach</h2>
+    </div>
+    <p class="intro reveal d2">
+      The Fresh Market is not a standalone store. It is one node in IMAN's integrated community ecosystem — designed to connect every resident to health, jobs, housing, and healing.
+    </p>
+    <div class="tag-row reveal d3">
+      <span class="eco-tag">Health Center</span>
+      <span class="eco-tag">Green ReEntry</span>
+      <span class="eco-tag">Supportive Housing</span>
+      <span class="eco-tag">CHW Team</span>
+    </div>
+  </div>
+
+  <div class="right">
+
+    <div class="integration reveal d2">
+      <div class="int-num">01</div>
+      <div class="int-text">
+        <div class="int-title">Food-Is-Medicine · IMAN Health Center</div>
+        <div class="int-desc">Patients screened for food insecurity at IMAN's FQHC are referred directly to the Fresh Market and enrolled in Fresh Boost credit. Community Health Workers operate at every distribution day — providing blood pressure screenings, SNAP enrollment support, and nutrition education.</div>
+      </div>
+    </div>
+
+    <div class="integration reveal d3">
+      <div class="int-num">02</div>
+      <div class="int-text">
+        <div class="int-title">Living-Wage Jobs · Green ReEntry Culinary Track</div>
+        <div class="int-desc">All Fresh Market staff earn living wages. The planned Culinary track in Green ReEntry creates a direct pipeline: participants train in food service, graduate with certifications, and step into roles at the store — connecting workforce development to food access in one corridor.</div>
+      </div>
+    </div>
+
+    <div class="integration reveal d4">
+      <div class="int-num">03</div>
+      <div class="int-text">
+        <div class="int-title">Community Space · Arts, Culture &amp; Gathering</div>
+        <div class="int-desc">Building on the model of Griot Plaza at 63rd &amp; Racine — the Fresh Market site becomes a neighborhood anchor with programming, public gathering space, and IMAN's community engagement team embedded for safety and outreach.</div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     SLIDE 7 — PROVEN TRACK RECORD
+     ========================================== -->
+<section class="slide" id="s7" aria-label="Proven Track Record">
+
+  <div class="left">
+    <div>
+      <div class="eyebrow reveal d1" style="margin-bottom:0.6rem;">
+        <div class="eyebrow-line" style="background:var(--accent-light);"></div>
+        <span class="eyebrow-text" style="color:var(--accent-light);">Englewood Proof-of-Concept</span>
+      </div>
+      <h2 class="reveal d2">Go Green<br>Community<br>Fresh Market</h2>
+    </div>
+
+    <ul class="outcomes-list" aria-label="Fresh Market outcomes">
+      <li class="outcome-item reveal d2">
+        <span class="outcome-num">4<span class="acc">yr</span></span>
+        <span class="outcome-desc"><strong>Operating since March 2022</strong> at 63rd &amp; Racine, Englewood — IMAN's anchor food access site</span>
+      </li>
+      <li class="outcome-item reveal d3">
+        <span class="outcome-num">9k<span class="acc">+</span></span>
+        <span class="outcome-desc"><strong>Loyalty rewards members</strong> enrolled — demonstrating deep community adoption and repeat engagement</span>
+      </li>
+      <li class="outcome-item reveal d4">
+        <span class="outcome-num">23<span class="acc">%</span></span>
+        <span class="outcome-desc"><strong>Revenue from SNAP/EBT</strong> — 20% of all transactions use SNAP; store serves the households that need it most</span>
+      </li>
+      <li class="outcome-item reveal d5">
+        <span class="outcome-num">25<span class="acc">+</span></span>
+        <span class="outcome-desc"><strong>Local &amp; BIPOC vendors</strong> — supply chain that builds neighborhood wealth, not just access</span>
+      </li>
+      <li class="outcome-item reveal d6">
+        <span class="outcome-num">14<span class="acc">+</span></span>
+        <span class="outcome-desc"><strong>Full-time positions created</strong> over four years, all at living wage</span>
+      </li>
+    </ul>
+
+    <div class="source-note reveal d6">Source: IMAN Fresh Market operational data, 2022–2026</div>
+  </div>
+
+  <div class="right">
+    <div class="right-headline reveal d1">The Model Works</div>
+
+    <div class="accent-quote reveal d2">
+      Replicating<br>what<br><span class="accent-word">already</span><br>works.
+    </div>
+
+    <div class="rule-dark rule reveal d3"></div>
+
+    <div class="proof-tags reveal d4">
+      <div class="proof-tag">Nonprofit grocery retail at convenience-store scale (3,500 sq ft)</div>
+      <div class="proof-tag">Subsidized staples via grant funding — below-cost sales model</div>
+      <div class="proof-tag">Link Match doubles SNAP produce purchasing power</div>
+      <div class="proof-tag">Fresh Boost in-store credit — dignity-preserving food assistance</div>
+      <div class="proof-tag">Greater Chicago Food Depository as anchor partner</div>
+      <div class="proof-tag">IMAN provides technical assistance to replicate this model</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==========================================
+     SLIDE 8 — FRESH BOOST: DIGNIFIED ACCESS
+     ========================================== -->
+<section class="slide" id="s8" aria-label="Fresh Boost Program">
+
+  <div class="left">
+    <div>
+      <div class="eyebrow reveal d1">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">Signature Program</span>
+      </div>
+      <h2 class="reveal d2">Fresh Boost:<br>Dignified<br>Food Access</h2>
+    </div>
+
+    <p class="desc reveal d3">
+      Instead of directing food-insecure households to a pantry, Fresh Boost provides a <strong>monthly in-store credit</strong> that participants spend freely — on whatever they need, whenever they need it. No charity counter. No judgment. Just a full grocery store, available like it is for everyone else.
+      <br><br>
+      Developed with the <strong>Greater Chicago Food Depository</strong>, Fresh Boost is positioned as a Medicaid food-is-medicine model aligned with emerging federal and state food-as-medicine policy.
+    </p>
+
+    <div class="boost-steps reveal d4">
+      <div class="step"><div class="step-dot"></div><span class="step-text">IMAN FQHC screens patient for food insecurity</span></div>
+      <div class="step"><div class="step-dot"></div><span class="step-text">Patient enrolled in Fresh Boost — receives monthly store credit</span></div>
+      <div class="step"><div class="step-dot"></div><span class="step-text">Participant shops freely at Fresh Market, preserving dignity and choice</span></div>
+      <div class="step"><div class="step-dot"></div><span class="step-text">CHW tracks health outcomes; data feeds food-is-medicine evidence base</span></div>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="callout-label reveal d1">Pilot Results — Englewood</div>
+
+    <div class="callout-stat-row reveal d2">
+      <div class="callout-stat">
+        <div class="c-num">30</div>
+        <div class="c-label">households in initial pilot cohort</div>
+      </div>
+      <div class="callout-stat">
+        <div class="c-num">100</div>
+        <div class="c-label">individuals in planned 2nd cohort expansion</div>
+      </div>
+      <div class="callout-stat">
+        <div class="c-num">$500K<sup>+</sup></div>
+        <div class="c-label">projected annual program cost at scale</div>
+      </div>
+      <div class="callout-stat">
+        <div class="c-num">0.4<sup>yr</sup></div>
+        <div class="c-label">estimated life expectancy gain from in-store food credit at scale</div>
+      </div>
+    </div>
+
+    <div class="expansion-box reveal d3">
+      <div class="exp-title">Chicago Lawn Expansion Plan</div>
+      <div class="exp-desc">Fresh Boost launches in Chicago Lawn with an initial cohort of 50 households, co-enrolled with IMAN Health Center patients and Chicago Lawn community members. Funded through the Greater Chicago Food Depository, Medicaid food-as-medicine tracks, and philanthropic partners.</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==========================================
+     SLIDE 9 — A HEALING ECONOMY
+     ========================================== -->
+<section class="slide" id="s9" aria-label="A Healing Economy">
+
+  <div class="slide-content">
+    <div class="eyebrow reveal d1">
+      <div class="eyebrow-line" style="background:var(--accent-light);"></div>
+      <span class="eyebrow-text" style="color:var(--accent-light);">Economic Impact</span>
+    </div>
+
+    <h2 class="reveal d2">A Healing Economy</h2>
+
+    <div class="economy-grid reveal d3">
+
+      <div class="eco-card">
+        <div class="eco-card-num">14<span class="acc">+</span></div>
+        <div class="eco-card-title">Full-Time Jobs Created</div>
+        <div class="eco-card-desc">All employees paid a <strong>living wage</strong>. Store manager, kitchen manager, storeperson, and part-time team hired locally from Chicago Lawn and surrounding neighborhoods.</div>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-card-num">25<span class="acc">+</span></div>
+        <div class="eco-card-title">Local &amp; BIPOC Vendors</div>
+        <div class="eco-card-desc">IMAN pays vendors at their <strong>required price point</strong>, then uses grant subsidy to sell affordably. This sustains small food businesses while keeping prices accessible — a double bottom line.</div>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-card-num">$3M<span class="acc">–8M</span></div>
+        <div class="eco-card-title">Capital Required</div>
+        <div class="eco-card-desc">CDFIs, USDA grants, City of Chicago DPD, NMTC, and philanthropy. Englewood model closed a comparable stack — <strong>a proven path to capital</strong> that IMAN is replicating in Chicago Lawn.</div>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-card-num">~10<span class="acc">%</span></div>
+        <div class="eco-card-title">Sales Subsidized by Grants</div>
+        <div class="eco-card-desc">High-need staples (eggs, milk, bread, chicken) sold <strong>below cost</strong>. In Englewood, $3 eggs cost $7 wholesale — the $4 gap is covered by grants. Chicago Lawn replicates this model.</div>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-card-num">20<span class="acc">%</span></div>
+        <div class="eco-card-title">Transactions via EBT/SNAP</div>
+        <div class="eco-card-desc">Englewood Fresh Market benchmark. SNAP acceptance, WIC, and Link Match together make the store <strong>the primary grocery destination</strong> for food-insecure households in the service area.</div>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-card-num">2029<span class="acc"></span></div>
+        <div class="eco-card-title">Green Line Station Reopens</div>
+        <div class="eco-card-desc">Illinois law (Dec 2025) mandates reopening the <strong>63rd &amp; Racine CTA Green Line</strong> — connecting Englewood and Chicago Lawn to the broader city. Transit access amplifies every investment in the corridor.</div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ==========================================
+     SLIDE 10 — HIGHLIGHTS
+     ========================================== -->
+<section class="slide" id="s10" aria-label="Impact Highlights">
+
+  <div class="top-bar">
+    <div>
+      <div class="eyebrow reveal d1">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">Impact Snapshot</span>
+      </div>
+      <h2 class="reveal d2">IMAN Fresh Market<br>Englewood: 2022–2026</h2>
+    </div>
+    <span class="tag-dark tag reveal d2" style="margin-bottom:0.15rem;font-size:var(--label-size);">Proof-of-Concept · 4 Years Operating</span>
+  </div>
+
+  <div class="highlights-grid">
+
+    <div class="highlight reveal d2">
+      <div class="h-num">9<span class="acc">k+</span></div>
+      <div class="h-label">Loyalty rewards members enrolled</div>
+      <div class="h-source">IMAN Fresh Market data, 2026</div>
+    </div>
+
+    <div class="highlight reveal d3">
+      <div class="h-num">23<span class="acc">%</span></div>
+      <div class="h-label">Total revenue from SNAP / EBT</div>
+      <div class="h-source">IMAN Fresh Market operational data</div>
+    </div>
+
+    <div class="highlight reveal d4">
+      <div class="h-num">30<span class="acc"></span></div>
+      <div class="h-label">Fresh Boost households — pilot cohort</div>
+      <div class="h-source">Kennedy King College partnership, 2025–26</div>
+    </div>
+
+    <div class="highlight reveal d5">
+      <div class="h-num">$40<span class="acc">M+</span></div>
+      <div class="h-label">Catalytic investment in the GoGreen 63rd &amp; Racine corridor</div>
+      <div class="h-source">GoGreen Unreseen Initiative, 2020–2026</div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     SLIDE 11 — BUILDING CHICAGO LAWN
+     ========================================== -->
+<section class="slide" id="s11" aria-label="Building Chicago Lawn">
+
+  <div class="left">
+    <div class="eyebrow reveal d1">
+      <div class="eyebrow-line" style="background:rgba(255,255,255,0.5);"></div>
+      <span class="eyebrow-text" style="color:rgba(255,255,255,0.7);">Capital Plan</span>
+    </div>
+
+    <h2 class="reveal d2">Building<br>Chicago<br>Lawn</h2>
+
+    <div class="ask-box reveal d3">
+      <div class="ask-label">Total Capital Ask</div>
+      <div class="ask-amount">$3M–8M</div>
+      <div class="ask-desc">Phase 1 capital to acquire site, build out a full-service ~3,500 sq ft grocery facility, and fund the first year of operations and subsidy programs.</div>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="eyebrow reveal d1">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">How Funds Are Used</span>
+    </div>
+
+    <div class="budget-item reveal d2">
+      <div class="budget-pct">40%</div>
+      <div class="budget-detail">
+        <div class="budget-title">Site Acquisition &amp; Construction</div>
+        <div class="budget-desc">Purchase or long-term lease of anchor site in Chicago Lawn. Build-out of full grocery facility including deli, produce section, kitchen, and receiving. Green ReEntry construction track participants employed throughout.</div>
+      </div>
+    </div>
+
+    <div class="budget-item reveal d3">
+      <div class="budget-pct">30%</div>
+      <div class="budget-detail">
+        <div class="budget-title">Equipment &amp; Buildout</div>
+        <div class="budget-desc">Refrigeration, shelving, POS systems, kitchen equipment, signage, and accessible design. Supplier and vendor onboarding. SNAP/WIC/EBT terminal certification.</div>
+      </div>
+    </div>
+
+    <div class="budget-item reveal d4">
+      <div class="budget-pct">20%</div>
+      <div class="budget-detail">
+        <div class="budget-title">Year 1 Operations &amp; Subsidy</div>
+        <div class="budget-desc">Staff salaries (living wage), inventory, subsidized staples program, Fresh Boost launch cohort, CHW integration, and Link Match matching fund.</div>
+      </div>
+    </div>
+
+    <div class="budget-item reveal d5">
+      <div class="budget-pct">10%</div>
+      <div class="budget-detail">
+        <div class="budget-title">Community Programming</div>
+        <div class="budget-desc">Nutrition education, cooking classes, community engagement team, public space activation, and arts &amp; culture programming to build the store as a neighborhood anchor.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:var(--element-gap);" class="reveal d6">
+      <p style="font-size:var(--small-size);color:var(--text-muted);font-style:italic;">
+        Funding sources: USDA Community Facilities grants, City of Chicago DPD, CDFIs, New Markets Tax Credit, Greater Chicago Food Depository, Crown Family Philanthropy and comparable foundations.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ==========================================
+     SLIDE 12 — ABOUT IMAN + CLOSE
+     ========================================== -->
+<section class="slide" id="s12" aria-label="About IMAN">
+
+  <div class="left">
+    <div class="about-label reveal d1">About IMAN</div>
+    <div class="about-heading reveal d2">Fostering<br>Health, Wellness<br>&amp; Healing</div>
+
+    <div class="about-paras">
+      <p class="about-para reveal d3">
+        <strong>IMAN — the Inner-City Muslim Action Network</strong> — uses the arts, civic engagement, and direct service to foster health, wellness, and healing in communities fractured by poverty and violence.
+      </p>
+      <p class="about-para reveal d4">
+        Founded in 1997 on Chicago's South Side by Rami Nashashibi, IMAN has grown from a community organizing group into a multi-program institution operating a Federally Qualified Health Center, Green ReEntry workforce development, the Go Green Community Fresh Market, Griot Plaza, and supportive housing — all within a tight geographic corridor in Englewood and Chicago Lawn.
+      </p>
+      <p class="about-para reveal d5">
+        IMAN's thesis is holistic: <strong>durable impact requires addressing health, food, housing, employment, and community simultaneously</strong> — through trusted local institutions that have earned their place over decades of authentic relationship.
+      </p>
+    </div>
+
+    <div class="partner-row reveal d6">
+      <span class="partner-chip">Northwestern Memorial</span>
+      <span class="partner-chip">GCFD</span>
+      <span class="partner-chip">CDPH</span>
+      <span class="partner-chip">Crown Family</span>
+      <span class="partner-chip">Kennedy King</span>
+      <span class="partner-chip">City of Chicago</span>
+      <span class="partner-chip">GoGreen Coalition</span>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="cta-block">
+      <div class="eyebrow reveal d2">
+        <div class="eyebrow-line" style="background:var(--accent-light);"></div>
+        <span class="eyebrow-text" style="color:var(--accent-light);">The Ask</span>
+      </div>
+
+      <div class="cta-heading reveal d3">
+        Join us in<br><span class="accent-word">building</span><br>Chicago<br>Lawn.
+      </div>
+
+      <p class="cta-desc reveal d4">
+        We are seeking <strong>$3M–$8M in capital investment</strong> and long-term philanthropic and public-sector partnerships to bring IMAN's proven Fresh Market model to Chicago Lawn — and close one more piece of the 30-year life expectancy gap.
+      </p>
+    </div>
+
+    <div class="cta-box reveal d5">
+      <div class="cta-contact-label">Contact</div>
+      <div class="cta-contact">IMAN · 63rd &amp; California, Chicago, IL · imancentral.org</div>
+    </div>
+
+    <div class="bottom-rule reveal d6">
+      IMAN Fresh Market: Chicago Lawn · Pitch Deck · 2026 · Inner-City Muslim Action Network
+    </div>
+  </div>
+
+</section>
+
+<script>
+/* ===========================================
+   SLIDE PRESENTATION CONTROLLER
+   Handles: keyboard nav, scroll snap, touch,
+   progress bar, nav dots, intersection observer
+   =========================================== */
+class SlidePresentation {
+  constructor() {
+    this.slides = Array.from(document.querySelectorAll('.slide'));
+    this.current = 0;
+    this.isScrolling = false;
+
+    this.setupIntersectionObserver();
+    this.setupKeyboardNav();
+    this.setupTouchNav();
+    this.setupWheelNav();
+    this.setupProgressBar();
+    this.setupNavDots();
+
+    // Mark first slide visible immediately
+    this.slides[0].classList.add('visible');
+    this.updateUI(0);
+  }
+
+  /* --- Intersection Observer: triggers .reveal animations --- */
+  setupIntersectionObserver() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          const idx = this.slides.indexOf(entry.target);
+          if (idx !== -1) this.updateUI(idx);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    this.slides.forEach(slide => observer.observe(slide));
+  }
+
+  /* --- Keyboard navigation --- */
+  setupKeyboardNav() {
+    document.addEventListener('keydown', (e) => {
+      if (['ArrowDown', 'ArrowRight', ' ', 'PageDown'].includes(e.key)) {
+        e.preventDefault();
+        this.goTo(this.current + 1);
+      } else if (['ArrowUp', 'ArrowLeft', 'PageUp'].includes(e.key)) {
+        e.preventDefault();
+        this.goTo(this.current - 1);
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        this.goTo(0);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        this.goTo(this.slides.length - 1);
+      }
+    });
+  }
+
+  /* --- Touch/swipe navigation --- */
+  setupTouchNav() {
+    let touchStartY = 0;
+    document.addEventListener('touchstart', e => { touchStartY = e.touches[0].clientY; }, { passive: true });
+    document.addEventListener('touchend', e => {
+      const delta = touchStartY - e.changedTouches[0].clientY;
+      if (Math.abs(delta) > 50) this.goTo(this.current + (delta > 0 ? 1 : -1));
+    }, { passive: true });
+  }
+
+  /* --- Mouse wheel navigation (debounced) --- */
+  setupWheelNav() {
+    let lastWheel = 0;
+    document.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const now = Date.now();
+      if (now - lastWheel < 800) return;
+      lastWheel = now;
+      this.goTo(this.current + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: false });
+  }
+
+  /* --- Navigate to slide index --- */
+  goTo(idx) {
+    const target = Math.max(0, Math.min(idx, this.slides.length - 1));
+    if (target === this.current) return;
+    this.current = target;
+    this.slides[target].scrollIntoView({ behavior: 'smooth' });
+    this.updateUI(target);
+  }
+
+  /* --- Update progress bar + nav dots --- */
+  updateUI(idx) {
+    this.current = idx;
+
+    // Progress bar
+    const bar = document.getElementById('progressBar');
+    if (bar) bar.style.width = ((idx + 1) / this.slides.length * 100) + '%';
+
+    // Nav dots
+    document.querySelectorAll('.nav-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === idx);
+      dot.setAttribute('aria-current', i === idx ? 'true' : 'false');
+    });
+  }
+
+  /* --- Generate nav dots --- */
+  setupNavDots() {
+    const nav = document.getElementById('navDots');
+    if (!nav) return;
+
+    this.slides.forEach((slide, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'nav-dot';
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.setAttribute('aria-current', i === 0 ? 'true' : 'false');
+      dot.addEventListener('click', () => this.goTo(i));
+      nav.appendChild(dot);
+    });
+  }
+
+  /* --- Progress bar setup --- */
+  setupProgressBar() {
+    const bar = document.getElementById('progressBar');
+    if (bar) bar.style.width = (1 / this.slides.length * 100) + '%';
+  }
+}
+
+// Initialize on load
+new SlidePresentation();
+</script>
+</body>
+</html>

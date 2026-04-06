@@ -211,7 +211,7 @@ Generate the pitch deck as a .pptx document with:
 - Placeholders in [brackets] where real data, photos, or project-specific details are needed
 - A "Designer Notes" line at the bottom of each slide for layout/visual guidance
 - A summary table at the top listing: Program Name, Target Population, Geography, # of Slides, Key Ask (funding amount or partnership type if known)
-- Read and follow the skill at "./Data library/skills/frontend-slides/SKILL.md" to design the slides
+- Read and follow the skill at "./Data library/skills/frontend-slides/SKILL.md" to design the slides and output a powerpoint presentation
 
 ## Constraints
 - Write in IMAN's voice: dignified, community-centered, bold, faith-informed but secular-serving
