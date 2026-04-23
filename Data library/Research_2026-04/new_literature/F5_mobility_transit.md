@@ -1,0 +1,11 @@
+# F5 — Mobility & Transit — New Literature 2023-2026
+
+1. **Hankey S et al. (2024).** "Global health and climate benefits from walking and cycling infrastructure." *PNAS* 121. DOI: 10.1073/pnas.2422334122. URL: https://www.pnas.org/doi/10.1073/pnas.2422334122. OA: Y. Design: modeled health impact assessment. Effect: substantial mortality reductions + CO2 co-benefits when walking/cycling infrastructure reaches regional coverage. Relevance: supports any IMAN ask for bike/pedestrian infrastructure at 63rd & Racine. Tier 2.
+
+2. **Nazelle A, et al. (2024-2025).** "The effectiveness of new urban trail infrastructure on physical activity and active transportation: a systematic review and meta-analysis of natural experiments." URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC11951833/. OA: Y. Design: meta-analysis of natural experiments. Effect: urban trails yield ~12% increase in physical activity for residents within 500m-1km. Relevance: direct evidence for trail/greenway connectivity. Tier 1.
+
+3. **US EPA. (2024).** "Final Rule to Strengthen the National Ambient Air Quality Standards for Particulate Matter" — annual PM2.5 NAAQS lowered 12→9 μg/m³. URL: https://www.epa.gov/pm-pollution/final-reconsideration-national-ambient-air-quality-standards-particulate-matter-pm. Effect: EPA estimates up to 4,500 prevented premature deaths annually, up to $46B in 2032 net health benefits. Relevance: translates air-quality policy into mortality gains IMAN can claim for PM2.5-reduction advocacy. Tier 1 (regulatory RIA).
+
+4. **Greene S, et al. (2024).** "Current inequality and future potential of US urban tree cover for reducing heat-related health impacts." *npj Urban Sustainability*. DOI: 10.1038/s42949-024-00150-3. URL: https://www.nature.com/articles/s42949-024-00150-3. OA: Y. Design: spatial modeling. Effect: urban tree canopy reduces summer mean temps ~1.0°C across 97 US cities; could offset 40-99% of projected 2050 heat-mortality increases. Relevance: direct evidence for IMAN tree-canopy investment in Englewood. Tier 2.
+
+5. **[DATA GAP]** — no causal 2023-2026 US transit-mortality peer-reviewed paper identified despite targeted search. Lane HM, Morello-Frosch R, Marshall JD, Apte JS. (2022) on redlining → PM2.5/NO2 disparities is retained as the nearest anchor.

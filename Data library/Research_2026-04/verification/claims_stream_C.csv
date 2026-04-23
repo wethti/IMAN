@@ -1,0 +1,51 @@
+claim_id,claim_text,source,verifier,status
+C001,"Englewood 2023 population = 21,411",https://en.wikipedia.org/wiki/Englewood,_Chicago,stream_C,verified_secondary
+C002,Englewood 2023 racial composition: 88.0% Black / 7.0% Hispanic / 1.4% White,https://en.wikipedia.org/wiki/Englewood,_Chicago,stream_C,verified_secondary
+C003,"Englewood 2020 median household income = $22,228",https://en.wikipedia.org/wiki/Englewood,_Chicago,stream_C,verified_secondary
+C004,Englewood 2008-2012 poverty rate = 46.6% of households below poverty line,https://en.wikipedia.org/wiki/Englewood,_Chicago,stream_C,verified_secondary
+C005,Englewood 2008-2012 unemployment rate (16+) = 28%,https://en.wikipedia.org/wiki/Englewood,_Chicago,stream_C,verified_secondary
+C006,Englewood life expectancy ~60 years (recent),https://theclick.news/life-expectancy-between-two-chicago-neighborhoods-reveals-years-of-systemic-racism/,stream_C,verified_tier3
+C007,Chicago Englewood West Englewood North Lawndale West Garfield Park East Garfield Park all had LE <70 in 2023,https://www.chicago.gov/content/dam/city/depts/cdph/statistics_and_reports/2025/2023-Life-Expectancy-Data-Brief_Final-for-Public-Release-09.10.2025.pdf,stream_C,verified_primary
+C008,Chicago citywide life expectancy 2023 = 78.7 years,https://www.chicago.gov/content/dam/city/depts/cdph/statistics_and_reports/2025/2023-Life-Expectancy-Data-Brief_Final-for-Public-Release-09.10.2025.pdf,stream_C,verified_primary
+C009,Black Chicagoans LE 2023 = 71.8 years; Asian/PI 86.8 years; gap 10.6 years,https://www.chicago.gov/content/dam/city/depts/cdph/statistics_and_reports/2025/2023-Life-Expectancy-Data-Brief_Final-for-Public-Release-09.10.2025.pdf,stream_C,verified_primary
+C010,"Chicago Lawn 2023 population = 53,460 (Wikipedia) or 55,789 (Point2)",https://en.wikipedia.org/wiki/Chicago_Lawn,_Chicago,stream_C,verified_secondary
+C011,Chicago Lawn 2023 racial composition: 61.7% Hispanic / 33.4% Black / 2.1% White,https://en.wikipedia.org/wiki/Chicago_Lawn,_Chicago,stream_C,verified_secondary
+C012,"Chicago Lawn 2023 median HH income = $46,945 (Point2); 2020 = $36,278 (Wikipedia)",https://www.point2homes.com/US/Neighborhood/IL/Chicago/Chicago-Lawn-Demographics.html,stream_C,verified_secondary
+C013,Chicago Lawn poverty rate 2023 ~19.2%,https://www.point2homes.com/US/Neighborhood/IL/Chicago/Chicago-Lawn-Demographics.html,stream_C,verified_secondary
+C014,USALEEP national coverage 65662 census tracts 2010-2015,https://www.cdc.gov/nchs/nvss/usaleep/usaleep.html,stream_C,verified_primary
+C015,HOLC 1935-1940 yellowlined/redlined Englewood Oakland Washington Park Woodlawn West Englewood Fuller Park,https://www.housingstudies.org/news/following-yellowlined-road/,stream_C,verified_tier2
+C016,West Englewood 2023 life expectancy = 66.2 years,https://www.chicago.gov/content/dam/city/depts/cdph/statistics_and_reports/2025/2023-Life-Expectancy-Data-Brief_Final-for-Public-Release-09.10.2025.pdf,stream_C,verified_primary
+C017,Auburn Gresham 2023 life expectancy = 66.2 years,https://www.chicago.gov/content/dam/city/depts/cdph/statistics_and_reports/2025/2023-Life-Expectancy-Data-Brief_Final-for-Public-Release-09.10.2025.pdf,stream_C,verified_primary
+C018,Roseland life expectancy = 66.9 years (2022 reference),https://www.chicago.gov/content/dam/city/depts/cdph/statistics_and_reports/2025/2023-Life-Expectancy-Data-Brief_Final-for-Public-Release-09.10.2025.pdf,stream_C,verified_primary
+C019,North Lawndale 2023 life expectancy = 63.9 years,https://abc7chicago.com/post/chicago-racial-life-expectancy-gap/15912952/,stream_C,verified_secondary
+C020,"Milwaukee ZIP 53206 population 22,816 91.4% Black 37.5% poverty",https://www.city-data.com/zips/53206.html,stream_C,verified_secondary
+C021,ZIP 53206 life expectancy = 71.3 years (LeCounte & Swain 2019),https://pmc.ncbi.nlm.nih.gov/articles/PMC6664354/,stream_C,verified_primary
+C022,ZIP 53206 vs 53217 life expectancy gap = 12 years (71.3 vs 83.2),https://pmc.ncbi.nlm.nih.gov/articles/PMC6664354/,stream_C,verified_primary
+C023,Detroit census tract LE range 62-90; 14 inner-city tracts LE 62-65,http://www.drawingdetroit.com/lifeexpectancy/,stream_C,verified_secondary
+C024,Highland Park (Detroit) adult poverty rate 44.7%,http://www.drawingdetroit.com/poverty1/,stream_C,verified_secondary
+C025,Sandtown-Winchester (Baltimore) life expectancy = 70.0 years,https://health.baltimorecity.gov/neighborhood-health-profile-reports,stream_C,verified_primary
+C026,Upton/Druid Heights (Baltimore) life expectancy = 68.2 years,https://health.baltimorecity.gov/neighborhood-health-profile-reports,stream_C,verified_primary
+C027,Strawberry Mansion (Philadelphia tract 151.02) median LE ~64 years,https://www.inquirer.com/health/life-expectancy-project-philadelphia-new-jersey-census-tract-20181218.html,stream_C,verified_secondary
+C028,Newark Black residents LE 71.9 years (Black men 67.4; Black women 75.9),https://measureofamerica.org/newark/,stream_C,verified_primary
+C029,"Ferguson MO 2010-2014 poverty doubled; unemployment rose 5% to 13%; 67% Black by 2008-2012",https://fivethirtyeight.com/features/ferguson-missouri/,stream_C,verified_secondary
+C030,"Gary IN 2023 76.5% Black 33.1% poverty median HH income $37,380",https://www.census.gov/quickfacts/garycityindiana,stream_C,verified_primary
+C031,Chinatown Manhattan life expectancy = 93.6 years (tract-level),https://nyhealthfoundation.org/resource/life-expectancy-by-census-tract-in-new-york-state/,stream_C,verified_primary
+C032,Manhattan CD3 (Chinatown/LES/East Village) LE 82.2 years (2018),https://helmsleytrust.org/news-and-insights/data2go-nyc-shows-stark-differences-in-well-being-life-expectancy-across-new-york-citys-nearly-200-neighborhoods-with-life-expectancy-ranging-from-73-6-years-at-its-lowest-to-91-at-its-high/,stream_C,verified_primary
+C033,Sunset Park Brooklyn (CB7) life expectancy = 82.6 years,https://nyulangone.org/files/sunset-park-data-glance.pdf,stream_C,verified_primary
+C034,Little Havana (Miami) average life expectancy = 80.56 years,https://www.mycaringplan.com/senior-living/little-havana-living/,stream_C,verified_secondary
+C035,Little Havana 95.3% Hispanic,https://www.mycaringplan.com/senior-living/little-havana-living/,stream_C,verified_secondary
+C036,"Mattapan (Boston) life expectancy = 77.3 years; Back Bay 82.8 years; lowest Roxbury tract 68.8 years",https://www.boston.gov/sites/default/files/file/2024/03/HOB_Mortality_LE_2023_FINAL_Corr_032524.pdf,stream_C,verified_primary
+C037,Hispanic Mortality Paradox meta-analysis: Hispanic populations had 17.5% lower mortality risk (OR 0.825 95% CI 0.75-0.91) Ruiz Steffen Smith 2013 AJPH,https://pmc.ncbi.nlm.nih.gov/articles/PMC3673509/,stream_C,verified_primary
+C038,"Markides & Coreil 1986 original Hispanic paradox statement; Public Health Reports 101(3):253-265",https://pubmed.ncbi.nlm.nih.gov/3086917/,stream_C,verified_primary
+C039,Palloni & Arias 2004 Demography 41(3):385-415 DOI 10.1353/dem.2004.0024 paradox attributed in part to salmon-bias/return-migration for foreign-born Mexicans,https://link.springer.com/article/10.1353/dem.2004.0024,stream_C,verified_primary
+C040,Bor et al. 2023 PNAS Nexus: Hispanic mortality advantage largely erased during COVID-19 pandemic DOI 10.1093/pnasnexus/pgad173,https://www.statnews.com/2023/09/14/hispanic-paradox-life-expectancy-research/,stream_C,verified_secondary
+C041,Boyle Heights 88.1% Hispanic median HH income $49734,https://www.buildinghealthycommunities.org/boyle-heights/,stream_C,verified_secondary
+C042,East Harlem + Central Harlem combined 228500 people 34% Hispanic 57% Black,https://pmc.ncbi.nlm.nih.gov/articles/PMC4301305/,stream_C,verified_primary
+C043,East Harlem asthma rate 5x national average; obesity 33%; diabetes 13%,https://pmc.ncbi.nlm.nih.gov/articles/PMC4301305/,stream_C,verified_primary
+C044,Chelsea MA 65% Hispanic; 45% foreign-born in 2023; 16.3% family poverty,https://www.neilsberg.com/insights/chelsea-ma-population-by-race/,stream_C,verified_secondary
+C045,Washington Heights 64.1% Hispanic 2020; 62% of Latinos are Dominican,https://en.wikipedia.org/wiki/Washington_Heights,_Manhattan,stream_C,verified_secondary
+C046,Little Village Chicago 81% Latinx 75% Mexican; 37% foreign-born; 24% poverty; per capita income $14234,https://www.enlacechicago.org/little-village-today,stream_C,verified_secondary
+C047,Texas Hispanic LE 81.2 years; White 78.1; Black 75.3,https://www.utsouthwestern.edu/ctplus/stories/2019/life-expectancy-texas.html,stream_C,verified_primary
+C048,Miami-Dade lowest premature age-adjusted mortality among major Florida counties,https://www.floridatrend.com/article/25064/how-healthy-is-florida/,stream_C,verified_secondary
+C049,Orange Mound Memphis population 11430; 33% below poverty,https://www.point2homes.com/US/Neighborhood/TN/Memphis/Orange-Mound-Demographics.html,stream_C,verified_secondary
+C050,US Hispanic LE 2023 = 81.3 years (F 84; M 78.5); all races 78.4,https://minorityhealth.hhs.gov/hispaniclatino-health,stream_C,verified_primary

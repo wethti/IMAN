@@ -1,0 +1,21 @@
+claim_id,claim_text,source,verifier,status
+F-001,"Eviction judgment associated with 40% higher mortality (95% CI 36-43%)",Graetz et al. Soc Sci Med 2024 DOI 10.1016/j.socscimed.2023.116494,Stream F,verified
+F-002,"Customized search assistance raised share moving to high-opportunity tract from 15% to 53%",Bergman/Chetty et al. AER 2024 DOI 10.1257/aer.20200407,Stream F,verified
+F-003,"Medically tailored meals cut hospitalizations 47% (95% CI 36-58%) in meta-analysis modeled to 50 states",Deng/Mozaffarian Health Affairs 2025 DOI 10.1377/hlthaff.2024.01307,Stream F,verified
+F-004,"READI Chicago: shooting/homicide arrests -65% in full sample; -79% in outreach-referred subgroup (stat. sig. after adjustment); BCR 4:1 to 18:1",Bhatt/Heller et al. QJE 2024 DOI 10.3386/w30852,Stream F,verified
+F-005,"Massachusetts Flexible Services: -23% hospitalizations -13% ED visits",Hager et al. Health Affairs 2025 DOI 10.1377/hlthaff.2024.01409,Stream F,verified
+F-006,"OpenResearch UBI: -4.1 pp labor-force participation, -1 to -2 hours/week worked",Vivalt/Rhodes/Bartik NBER 32719,Stream F,verified
+F-007,"Vacant-lot redevelopment DiD 2007-2023: aggravated assault -56.6/sq mi/yr (95% CI -97.9 to -15.2)",Asa et al. AJPH 2026 DOI 10.2105/AJPH.2025.308269,Stream F,verified
+F-008,"Intensive food-as-medicine RCT: null on HbA1c (adjusted diff -0.10, 95% CI -0.46 to 0.25, P=.57)",Doyle/Alsan JAMA Intern Med 2024 DOI 10.1001/jamainternmed.2023.6670,Stream F,verified
+F-009,"Produce Rx RCT: HbA1c 0.20 pp higher than usual care (95% CI 0.05-0.35) at 12 months",Drake et al. JAMA Intern Med 2026 DOI 10.1001/jamainternmed.2025.8008,Stream F,verified
+F-010,"NC Healthy Opportunities Pilots: $85/enrollee/month medical-cost savings; 265k services to 20k enrollees",Van Vleet NC Med J 2024 DOI 10.18043/001c.94844,Stream F,verified
+F-011,"CHW interventions cost-effective in 70% of 50 reviewed studies; median cost/QALY $3,967 (2024 USD)",Van Iseghem et al. Value in Health 2026 DOI 10.1016/j.jval.2025.09.004,Stream F,verified
+F-012,"Naloxone community distribution: 98.3% survival when administered by PWUD (95% CI 97.5-98.8%)",Fischer et al. BMC Public Health 2025 DOI 10.1186/s12889-025-22210-8,Stream F,verified
+F-013,"Stockton SEED RCT: Kessler-10 distress 21.3 to 18.4 (P=.027); income volatility 19% vs 26% (P=.039)",West & Castro J Urban Health 2023 DOI 10.1007/s11524-023-00723-0,Stream F,verified
+F-014,"Collaborative care IPD meta-analysis: therapeutic-treatment-strategy component interaction coefficient -0.07 on depression (P<0.001)",Schillok et al. JAMA Psychiatry 2025 DOI 10.1001/jamapsychiatry.2025.0183,Stream F,verified
+F-015,"2021 CTC expansion linked to fewer depressive/anxiety symptoms in low-income adults; larger reductions for Black/Hispanic parents",Hamad et al. Health Affairs 2023 DOI 10.1377/hlthaff.2022.00733,Stream F,verified
+F-016,"Green-space exposure reduces odds of depression OR 0.89 (95% CI 0.86-0.93)",Liu et al. meta-analysis 2024 PMC10885792,Stream F,verified
+F-017,"EPA 2024 PM2.5 NAAQS (9 μg/m³) estimated to prevent up to 4500 premature deaths/year and $46B net health benefit by 2032",EPA RIA 2024 final rule,Stream F,verified
+F-018,"Urban tree canopy reduces summer mean air temps ~1.0°C; could offset 40-99% of projected 2050 heat-mortality increase",Greene et al. npj Urban Sustainability 2024 DOI 10.1038/s42949-024-00150-3,Stream F,verified
+F-019,"States lifting COVID eviction moratoriums had 5.4x COVID mortality (95% CI 3.1-9.3) at 16 weeks post-expiration",Leifheit et al. AJE 2021 DOI 10.1093/aje/kwab196,Stream F,verified (SUPPLEMENTARY)
+F-020,"CLT qualitative study identifies 5 mechanisms linking CLT to health: stability, unit quality, amenities, services, governance",Arcaya et al. J Urban Health 2023 DOI 10.1007/s11524-022-00706-7,Stream F,verified

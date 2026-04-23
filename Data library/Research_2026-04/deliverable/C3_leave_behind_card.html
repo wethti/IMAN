@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>IMAN 2040 — Leave-Behind</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --accent: #2e7d48;
+    --accent-light: #3d9e5f;
+    --accent-pale: #e8f5ed;
+    --ink: #111111;
+    --ink-soft: #444444;
+    --ink-muted: #777777;
+    --rule: #d8d8d2;
+    --bg: #fbfbf7;
+    --panel: #ffffff;
+    --font-display: 'Archivo', system-ui, sans-serif;
+    --font-body: 'Nunito', system-ui, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    background: #e7e7e0;
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 10pt;
+    line-height: 1.35;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page-wrap {
+    padding: 24px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .card {
+    width: 8.5in;
+    min-height: 11in;
+    background: var(--bg);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
+    padding: 0.55in 0.55in 0.5in 0.55in;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 14px;
+  }
+  /* ============= HEADER ============= */
+  .card-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .brand {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 11pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .doc-label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 8pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  h1 {
+    grid-column: 1 / -1;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 26pt;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-top: 6px;
+  }
+  h1 .accent { color: var(--accent); }
+  .subhead {
+    grid-column: 1 / -1;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 10.5pt;
+    color: var(--ink-soft);
+    margin-top: 2px;
+  }
+
+  /* ============= NUMBER BAND ============= */
+  .number-band {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--rule);
+    background: var(--panel);
+  }
+  .nb-cell {
+    padding: 12px 14px;
+    border-right: 1px solid var(--rule);
+  }
+  .nb-cell:last-child { border-right: none; }
+  .nb-cell.accent { background: var(--accent); color: #fff; }
+  .nb-label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 7.5pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 4px;
+  }
+  .nb-value {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 22pt;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .nb-unit {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 9pt;
+    opacity: 0.8;
+    margin-top: 2px;
+  }
+
+  /* ============= BODY GRID ============= */
+  .body-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 16px;
+    align-content: start;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 8pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--accent);
+  }
+  .thesis p {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 13pt;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 10px;
+    letter-spacing: -0.005em;
+  }
+  .thesis p.quieter {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 10pt;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    letter-spacing: normal;
+  }
+
+  /* 4 features */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .feat {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    padding: 9px 10px;
+  }
+  .feat-n {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 7.5pt;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 3px;
+  }
+  .feat-t {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 10pt;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 3px;
+  }
+  .feat-d {
+    font-size: 8.5pt;
+    color: var(--ink-soft);
+    line-height: 1.35;
+  }
+
+  /* ============= EVIDENCE STRIP ============= */
+  .evidence {
+    margin-top: 2px;
+  }
+  .ev-row {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr 1fr;
+    gap: 8px;
+    padding: 5px 0;
+    border-bottom: 1px dotted var(--rule);
+    align-items: center;
+  }
+  .ev-row:last-child { border-bottom: none; }
+  .ev-head {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 7pt;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 3px;
+    margin-bottom: 3px;
+  }
+  .ev-name { font-size: 9pt; color: var(--ink); font-weight: 600; }
+  .ev-effect {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 9pt;
+    color: var(--accent);
+    text-align: right;
+  }
+  .ev-src { font-size: 7.5pt; color: var(--ink-muted); text-align: right; font-style: italic; }
+
+  /* ============= OUTCOME / ASK ============= */
+  .outcome {
+    background: var(--ink);
+    color: #fff;
+    padding: 14px 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    align-items: center;
+  }
+  .out-label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 7.5pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #a8d5b6;
+    margin-bottom: 5px;
+  }
+  .out-big {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 20pt;
+    line-height: 1;
+    letter-spacing: -0.015em;
+  }
+  .out-small {
+    font-size: 9pt;
+    color: #c8c8c8;
+    margin-top: 5px;
+    line-height: 1.35;
+  }
+  .out-big .green { color: var(--accent-light); }
+
+  /* ============= FOOT / CONTACT ============= */
+  .card-foot {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    padding-top: 10px;
+    border-top: 2px solid var(--ink);
+  }
+  .about h3, .contact h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 7.5pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+  .about p { font-size: 8.5pt; color: var(--ink-soft); line-height: 1.4; }
+  .contact-lines { font-size: 9pt; color: var(--ink); line-height: 1.55; }
+  .contact-lines .name { font-weight: 700; font-family: var(--font-display); font-size: 10pt; }
+  .doc-id {
+    grid-column: 1 / -1;
+    font-family: var(--font-display);
+    font-size: 7pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-align: right;
+    margin-top: 4px;
+  }
+
+  /* ============= PRINT ============= */
+  @media print {
+    html, body { background: #fff; }
+    .page-wrap { padding: 0; gap: 0; }
+    .card {
+      box-shadow: none;
+      width: 100%;
+      min-height: 100vh;
+      page-break-after: always;
+      margin: 0;
+    }
+    .no-print { display: none !important; }
+  }
+
+  /* screen print-preview hint */
+  .print-hint {
+    font-family: var(--font-display);
+    font-size: 8pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #555;
+    background: #fff;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  .print-hint:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <button class="print-hint no-print" onclick="window.print()">Print &rarr; Letter, 1 page</button>
+
+  <!-- ============================================================
+       THE LEAVE-BEHIND CARD
+       One page. Print after every meeting.
+  ============================================================ -->
+  <article class="card">
+
+    <!-- HEAD -->
+    <header class="card-head">
+      <div class="brand">IMAN &middot; Inner-City Muslim Action Network</div>
+      <div class="doc-label">Leave-Behind &middot; 2026</div>
+      <h1>Closing the <span class="accent">30-year gap.</span><br/>A 2040 plan for Englewood.</h1>
+      <div class="subhead">
+        A child born today on Chicago's South Side lives 11&ndash;22 fewer years than one born three miles north.
+        The gap is not about behavior. It is about how the neighborhood has been built &mdash; and that is something we can change.
+      </div>
+    </header>
+
+    <!-- NUMBER BAND -->
+    <section class="number-band">
+      <div class="nb-cell">
+        <div class="nb-label">Englewood today</div>
+        <div class="nb-value">67.7</div>
+        <div class="nb-unit">years &middot; life expectancy (CDPH 2023)</div>
+      </div>
+      <div class="nb-cell">
+        <div class="nb-label">Streeterville, 3 mi north</div>
+        <div class="nb-value">90.0</div>
+        <div class="nb-unit">years &middot; same city, same hospitals</div>
+      </div>
+      <div class="nb-cell accent">
+        <div class="nb-label">Our 15-yr target</div>
+        <div class="nb-value">+3&ndash;5</div>
+        <div class="nb-unit">years of LE gain at full build-out</div>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <section class="body-grid">
+
+      <!-- LEFT: Thesis -->
+      <div class="thesis">
+        <div class="section-title">The thesis</div>
+        <p>Don't fund a program. Fund the ecosystem.</p>
+        <p class="quieter">
+          Twenty years of single-program interventions in Englewood &mdash; grocery stores, clinics, violence crews &mdash; have each worked on their own terms.
+          Life expectancy has barely moved. The gap is driven by a <em>stack</em> of interacting risks, and only a stacked response, on the same blocks, for long enough, collapses it.
+          IMAN has been assembling that stack for 25 years. The 2040 plan runs it at the density where the evidence says compounding effects appear.
+        </p>
+      </div>
+
+      <!-- RIGHT: 4 structural features -->
+      <div>
+        <div class="section-title">What makes a poor neighborhood long-lived</div>
+        <div class="features">
+          <div class="feat">
+            <div class="feat-n">01</div>
+            <div class="feat-t">Walkable density</div>
+            <div class="feat-d">Streets that pull people outside and into each other's lives.</div>
+          </div>
+          <div class="feat">
+            <div class="feat-n">02</div>
+            <div class="feat-t">Daily anchors</div>
+            <div class="feat-d">A mosque, a market, a clinic &mdash; encountered every week, not every year.</div>
+          </div>
+          <div class="feat">
+            <div class="feat-n">03</div>
+            <div class="feat-t">Inter-generational bonds</div>
+            <div class="feat-d">Families and elders who stay; networks that know each other's children.</div>
+          </div>
+          <div class="feat">
+            <div class="feat-n">04</div>
+            <div class="feat-t">Collective efficacy</div>
+            <div class="feat-d">Shared willingness to act for the common good &mdash; the #1 non-behavioral predictor of longevity.</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- EVIDENCE STRIP -->
+    <section class="evidence">
+      <div class="section-title">The evidence stack &mdash; every piece is published</div>
+      <div class="ev-row ev-head">
+        <div>Initiative</div>
+        <div style="text-align:right">Estimated LE effect</div>
+        <div style="text-align:right">Anchor source</div>
+      </div>
+      <div class="ev-row">
+        <div class="ev-name">FQHC expansion (IMAN Health Center)</div>
+        <div class="ev-effect">+1.5 yrs</div>
+        <div class="ev-src">HRSA UDS &middot; Bailey 2020</div>
+      </div>
+      <div class="ev-row">
+        <div class="ev-name">Medicaid enrollment &amp; continuity</div>
+        <div class="ev-effect">+1.1 yrs</div>
+        <div class="ev-src">Sommers, NEJM 2012</div>
+      </div>
+      <div class="ev-row">
+        <div class="ev-name">Barbershop BP management (LOSARTAN)</div>
+        <div class="ev-effect">&minus;27 mmHg</div>
+        <div class="ev-src">Victor, NEJM 2018</div>
+      </div>
+      <div class="ev-row">
+        <div class="ev-name">Violence interruption (READI-style)</div>
+        <div class="ev-effect">&minus;50&ndash;65% violence</div>
+        <div class="ev-src">Bhatt, QJE 2024</div>
+      </div>
+      <div class="ev-row">
+        <div class="ev-name">Vacant-lot greening</div>
+        <div class="ev-effect">&minus;CV mortality</div>
+        <div class="ev-src">Asa, AJPH 2026</div>
+      </div>
+      <div class="ev-row">
+        <div class="ev-name">Fresh-food access + clinical coaching</div>
+        <div class="ev-effect">+0.5 yrs</div>
+        <div class="ev-src">Deng, Health Affairs 2025</div>
+      </div>
+    </section>
+
+    <!-- OUTCOME / ASK BAR -->
+    <section class="outcome">
+      <div>
+        <div class="out-label">What we project</div>
+        <div class="out-big"><span class="green">+3&ndash;5 years</span> of life expectancy</div>
+        <div class="out-small">in majority-Black Englewood, over 10&ndash;15 years of full ecosystem build-out. Conservative; defensible; big enough to matter.</div>
+      </div>
+      <div>
+        <div class="out-label">What we're asking for</div>
+        <div class="out-big">$25M <span class="green">catalytic capital</span></div>
+        <div class="out-small">To intensify &mdash; not start &mdash; the work IMAN has run for a quarter century, to the density where compounding returns appear.</div>
+      </div>
+    </section>
+
+    <!-- FOOT -->
+    <footer class="card-foot">
+      <div class="about">
+        <h3>About IMAN</h3>
+        <p>
+          The Inner-City Muslim Action Network is a 25-year-old Chicago institution rooted in Chicago Lawn and Englewood,
+          operating across health, housing, arts, reentry, food access, and community organizing.
+          The 2040 plan integrates these pillars into a single ecosystem of care measured against the 16 U.S. communities that most resemble Englewood.
+        </p>
+      </div>
+      <div class="contact">
+        <h3>Continue the conversation</h3>
+        <div class="contact-lines">
+          <span class="name">IMAN &middot; Development Office</span><br/>
+          2744 W 63rd Street, Chicago, IL 60629<br/>
+          development@imancentral.org<br/>
+          imancentral.org / 2040
+        </div>
+      </div>
+      <div class="doc-id">Doc C3 &middot; 2026-04 research package &middot; see also: Narrative Brief (C1) &middot; Pitch Deck (C2)</div>
+    </footer>
+
+  </article>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+claim_id,claim_text,source,verifier,status
+A-HC1-01,FQHC Expansion LE gain ~1.5 years,decision_tree.md,Stream A,cited
+A-HC1-02,"Medicaid expansion reduced all-cause mortality by 6.1% in near-poor adults",Sommers BD et al. NEJM 2012 (Mortality and Access to Care after State Medicaid Expansions) [evidence_base.md Healthcare],Stream A,needs_verification
+A-HC1-03,"6% mortality reduction ~ 0.7-1.5 yrs of gap closure",evidence_base.md Healthcare synthesis,Stream A,needs_verification
+A-HC2-01,CHW Programs LE gain ~1.0 year,decision_tree.md,Stream A,cited
+A-HC2-02,"Brazil Family Health Strategy CHW model reduced infant and overall mortality",Macinko J (evidence_base.md Healthcare),Stream A,needs_verification
+A-HC3-01,Medicaid Enrollment LE gain ~0.7 year,decision_tree.md,Stream A,cited
+A-HC3-02,"ACA Medicaid expansion: 6.1% mortality reduction near-poor adults",NEJMsa (evidence_base.md Healthcare),Stream A,needs_verification
+A-HC4-01,Barbershop BP Screening LE gain ~0.6 year,decision_tree.md,Stream A,cited
+A-HC4-02,"Barbershop BP trial: systolic BP control 63.6% vs 11.7% controls",Victor et al. NEJM 2018 [evidence_base.md Healthcare],Stream A,needs_verification
+A-HC4-03,"Sustained BP control reduces stroke risk ~35-40% and CV mortality ~25%",evidence_base.md Healthcare synthesis,Stream A,needs_verification
+A-HC5-01,MOUD + Naloxone LE gain ~0.8 year,decision_tree.md,Stream A,cited
+A-HC5-02,"MOUD (buprenorphine/methadone) cut all-cause mortality 50-75% vs off-treatment",evidence_base.md Healthcare,Stream A,needs_verification
+A-HC5-03,"Massachusetts naloxone distribution: 46% lower opioid overdose mortality in high-distribution communities",Walley AY et al. BMJ 2013 [evidence_base.md Healthcare],Stream A,needs_verification
+A-HC6-01,Integrated Behavioral Health LE gain ~0.8 year,decision_tree.md,Stream A,cited
+A-FA1-01,Fresh Boost / SNAP Enrollment LE gain ~0.6 year,decision_tree.md,Stream A,cited
+A-FA1-02,"SNAP associated with reduced food insecurity, low birth weight, chronic disease",Bach J (evidence_base.md Food access),Stream A,needs_verification
+A-FA2-01,WIC Access LE gain ~0.5 year,decision_tree.md,Stream A,cited
+A-FA2-02,"WIC participation improved birth weight and gestational age",Hoynes et al. (evidence_base.md Food access),Stream A,needs_verification
+A-FA3-01,Fresh Market Expansion LE gain ~0.8 year,decision_tree.md,Stream A,cited
+A-FA3-02,"PHRESH natural experiment: supermarket introduction produced modest F&V consumption gains",Dubowitz et al. (evidence_base.md Food access),Stream A,needs_verification
+A-FA4-01,SSB tax LE gain ~ [DATA GAP] - decision_tree lists no numeric estimate,decision_tree.md,Stream A,data_gap
+A-FA4-02,"Mexico SSB tax: 12% reduction in SSB purchases in first year",Colchero et al. (evidence_base.md Food access),Stream A,needs_verification
+A-FA4-03,"SSB tax studies show 10-50% reduction in SSB purchases across jurisdictions",Teng et al. (evidence_base.md Food access),Stream A,needs_verification
+A-FA5-01,EITC + Income Transfers LE gain ~0.4 year,decision_tree.md,Stream A,cited
+A-FA5-02,EITC expansions improved infant birth weight,Hoynes et al. (evidence_base.md Food access/Funding),Stream A,needs_verification
+A-HO1-01,Permanent Supportive Housing LE gain ~1.5 year,decision_tree.md,Stream A,cited
+A-HO1-02,"Housing First reduces ED use, hospitalizations, substance-related mortality",Berg RC et al. (evidence_base.md Housing),Stream A,needs_verification
+A-HO2-01,Housing Mobility Vouchers LE gain ~1.0 year,decision_tree.md,Stream A,cited
+A-HO2-02,"MTO children moving to low-poverty neighborhoods earned 31% more as adults",Chetty et al. 2016 (evidence_base.md Housing),Stream A,needs_verification
+A-HO2-03,"MTO: obesity probability reduced ~4.6 percentage points",Ludwig et al. NEJM 2011 (evidence_base.md Housing),Stream A,needs_verification
+A-HO3-01,Community Land Trusts LE gain ~0.5 year,decision_tree.md,Stream A,cited
+A-HO4-01,Mixed-Income Development LE gain ~0.7 year,decision_tree.md,Stream A,cited
+A-HO5-01,Lead Remediation LE gain ~0.6 year,decision_tree.md,Stream A,cited
+A-HO5-02,"No safe level of lead exposure in children",Lanphear B (evidence_base.md IMAN initiatives),Stream A,needs_verification
+A-ED1-01,Early Childhood Education LE gain ~2.0 year,decision_tree.md,Stream A,cited
+A-ED1-02,"Perry Preschool ROI $7-12 per $1 invested",Heckman JJ (evidence_base.md Education),Stream A,needs_verification
+A-ED2-01,Nurse-Family Partnership LE gain ~1.5 year,decision_tree.md,Stream A,cited
+A-ED2-02,"NFP: 50% reduction in child abuse and neglect",Olds et al. (evidence_base.md Education),Stream A,needs_verification
+A-ED3-01,School Funding Equity LE gain ~1.0 year,decision_tree.md,Stream A,cited
+A-ED3-02,"10% increase in per-pupil spending significantly raised adult wages, reduced incarceration",Jackson CK et al. (evidence_base.md Education),Stream A,needs_verification
+A-ED4-01,Teacher Quality Investment LE gain ~0.8 year,decision_tree.md,Stream A,cited
+A-ED4-02,"1 SD teacher value-added gain = ~$40,000 NPV per student",Chetty et al. Teachers II (evidence_base.md Education),Stream A,needs_verification
+A-ED5-01,Neighborhood Poverty Reduction LE gain ~1.5 year,decision_tree.md,Stream A,cited
+A-ED5-02,"Chicago CPC: statistically significant reductions in depression, substance use, health risk at age 37",Varshney et al. (evidence_base.md Education),Stream A,needs_verification
+A-ED5-03,"One Summer Plus RCT: 43% reduction in violent crime arrests",Heller S (evidence_base.md Education),Stream A,needs_verification
+A-MT1-01,PM2.5 Reduction / Bus Electrification LE gain ~0.4 year,decision_tree.md,Stream A,cited
+A-MT1-02,"10 ug/m3 PM2.5 reduction = 0.61 yr LE increase",Pope CA et al. NEJM (evidence_base.md Mobility),Stream A,needs_verification
+A-MT2-01,CTA Racine Green Line Reopening LE gain [DATA GAP] - decision tree lists no numeric estimate,decision_tree.md,Stream A,data_gap
+A-MT2-02,"Racine Green Line station closed 1994; reopen target 2029 per Dec 2025 IL transit bill",IMAN_initiatives_profile.md,Stream A,cited
+A-MT3-01,Safe Walking Routes LE gain ~0.3 year,decision_tree.md,Stream A,cited
+A-MT3-02,"Barcelona superblocks: 665 premature deaths prevented/yr; 0.20 yr LE increase citywide",Perez et al. (evidence_base.md Mobility),Stream A,needs_verification
+A-MT4-01,Active Transit Infrastructure LE gain ~0.2 year,decision_tree.md,Stream A,cited
+A-RC1-01,Vacant Lot Greening LE gain ~0.5 year,decision_tree.md,Stream A,cited
+A-RC1-02,"Philadelphia vacant lot greening trial: 29% reduction in gun violence in surrounding blocks",Branas CC et al. PNAS 2018 (evidence_base.md Recreation),Stream A,needs_verification
+A-RC2-01,Griot Plaza / Community Corridors LE gain [DATA GAP] - decision tree lists no numeric estimate,decision_tree.md,Stream A,data_gap
+A-RC3-01,Park & Greenspace Access LE gain ~0.3 year,decision_tree.md,Stream A,cited
+A-RC3-02,"Greenspace exposure meta-analysis: reduced all-cause, CVD mortality, T2D",Twohig-Bennett & Jones 2018 (evidence_base.md Recreation),Stream A,needs_verification
+A-RC4-01,Community Health Nodes LE gain ~0.6 year,decision_tree.md,Stream A,cited
+A-CP1-01,Group Violence Intervention LE gain ~1.0 year,decision_tree.md,Stream A,cited
+A-CP1-02,"Focused deterrence meta-analysis: 30-60% homicide reduction in target areas",Braga & Weisburd (evidence_base.md Other city projects),Stream A,needs_verification
+A-CP1-03,"Oakland Ceasefire: 30% homicide reduction over 3 years",Barao L 2019 (evidence_base.md Other city projects),Stream A,needs_verification
+A-CP2-01,Cure Violence / READI LE gain ~1.5 year,decision_tree.md,Stream A,cited
+A-CP2-02,"Cure Violence / Baltimore: 56% homicide reduction in one district",Ransford et al. (evidence_base.md Other city projects),Stream A,needs_verification
+A-CP2-03,"READI Chicago: 79% reduction in violent crime involvement vs controls",READI Chicago eval Oct 2023 (evidence_base.md Other city projects),Stream A,needs_verification
+A-CP3-01,Summer Youth Employment LE gain ~0.6 year,decision_tree.md,Stream A,cited
+A-CP3-02,"Chicago One Summer Plus RCT: 43% reduction in violent crime arrests",Heller S Science 2014 (evidence_base.md Other city projects),Stream A,needs_verification
+A-CP4-01,Naloxone Saturation LE gain ~0.7 year,decision_tree.md,Stream A,cited
+A-CP4-02,"Massachusetts naloxone distribution: 46% lower overdose mortality",Walley et al. BMJ 2013 (evidence_base.md Other city projects),Stream A,needs_verification
+A-CP5-01,Vacant Lot Restoration LE gain ~0.5 year,decision_tree.md,Stream A,cited
+A-IM1-01,IMAN Health Center Expansion LE gain ~1.5 year,decision_tree.md,Stream A,cited
+A-IM1-02,IMAN current FQHC = 3500 sqft; expanding to ~30000 sqft; >$20M capital,IMAN_initiatives_profile.md,Stream A,cited
+A-IM2-01,Regenerator Housing LE gain ~1.0 year,decision_tree.md,Stream A,cited
+A-IM2-02,Regenerator will produce ~48 supportive housing units + ground-floor FQHC/pharmacy,IMAN_initiatives_profile.md,Stream A,cited
+A-IM3-01,Green Reentry Workforce LE gain ~0.8 year,decision_tree.md,Stream A,cited
+A-IM3-02,Green Reentry 2024: 350 graduates; 91% retention; placement rate being compiled,IMAN_initiatives_profile.md,Stream A,cited
+A-IM3-03,"Each $10,000 additional income ~ 1 year LE among low-income adults",Chetty et al. JAMA 2016 (evidence_base.md Funding/Housing),Stream A,needs_verification
+A-IM4-01,Fresh Market Operations LE gain ~0.8 year,decision_tree.md,Stream A,cited
+A-IM4-02,Fresh Market: 20% transactions via EBT; 23% revenue SNAP; 9000+ loyalty members,IMAN_initiatives_profile.md,Stream A,cited
+A-IM5-01,Weekend Warriors Youth LE gain ~0.5 year,decision_tree.md,Stream A,cited
+A-IM6-01,IMAN Oasis Cafe/Community LE gain [DATA GAP] - decision tree lists no numeric estimate,decision_tree.md,Stream A,data_gap
+A-FU1-01,NMTC / HUD Choice Neighborhoods LE gain [DATA GAP] - funding is enabling; tree lists no numeric estimate,decision_tree.md,Stream A,data_gap
+A-FU2-01,CDFI / Social Impact Bonds LE gain [DATA GAP] - no direct numeric estimate,decision_tree.md,Stream A,data_gap
+A-FU2-02,"Manitoba Mincome: 8.5% reduction in hospitalizations",Forget EL 2011 (evidence_base.md Funding/Housing),Stream A,needs_verification
+A-FU3-01,SNAP / WIC / EITC LE gain [DATA GAP] - encompasses multiple programs each with own estimate,decision_tree.md,Stream A,data_gap
+A-FU3-02,"Bolsa Familia: 17% reduction in overall child mortality; 58% in nutrition-related child mortality",Rasella et al. (evidence_base.md Funding),Stream A,needs_verification
+A-FU4-01,Philanthropy + Foundation Grants LE gain [DATA GAP],decision_tree.md,Stream A,data_gap
+A-FU5-01,City & State Capital Grants LE gain [DATA GAP],decision_tree.md,Stream A,data_gap
+A-A0-01,"Chetty income-LE gradient: top 1% live ~15 yrs longer than bottom 1%",Chetty et al. JAMA 2016 (evidence_base.md Funding),Stream A,needs_verification
+A-A0-02,"North Karelia Project: 80% reduction in CV mortality over 30 years",Vartiainen E (evidence_base.md Healthcare),Stream A,needs_verification
+A-A0-03,"A 10 mmHg reduction in population mean SBP corresponds to substantial CVD mortality decline - magnitude sourced from ACC/AHA/SPRINT literature",[DATA GAP - specific coefficient needs primary verification],Stream A,data_gap
+A-A0-04,"Englewood population ~24000; ~94% Black; poverty ~42%; LE 62-67 yrs",00_similarity_criteria.md,Stream A,needs_verification
+A-A0-05,"USALEEP tract LE data is 2010-2015 snapshot",00_master_plan.md,Stream A,cited
+B001,CDC PLACES publishes census-tract-level chronic-disease prevalence for 83522 tracts in the 2025 release covering BRFSS 2022 and ACS 2018-2022,https://data.cdc.gov/500-Cities-Places/PLACES-Local-Data-for-Better-Health-Census-Tract-D/cwsq-ngmh,stream_B,verified
+B002,CDC PLACES landing page confirms data portal and tract/ZCTA/place/county geographies available,https://www.cdc.gov/places/index.html,stream_B,verified
+B003,USALEEP census-tract life expectancy data covers 2010-2015 deaths and is hosted on the CDC FTP server,https://www.cdc.gov/nchs/nvss/usaleep/usaleep.html,stream_B,verified
+B004,USALEEP raw files available at the CDC Health Statistics FTP in XLSX and CSV,https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/NVSS/USALEEP/,stream_B,verified
+B005,CDC WONDER provides underlying-cause-of-death micro-queries from 1999 to present with small-cell suppression for cells under 10 deaths,https://wonder.cdc.gov/,stream_B,verified
+B006,NCHS NVSS downloadable final data available via CDC WONDER for public use and via NCHS Research Data Center for restricted micro-data,https://www.cdc.gov/nchs/nvss/index.htm,stream_B,verified
+B007,Chicago Health Atlas hosts 160+ community-area health indicators with CSV/XLSX bulk download,https://chicagohealthatlas.org/download,stream_B,verified
+B008,BRFSS SMART MMSA 2023 data released December 2024 available as ASCII and SAS XPT,https://www.cdc.gov/brfss/smart/smart_2023.html,stream_B,verified
+B009,SAHIE Small Area Health Insurance Estimates covers 2008-2023 at state and county level (no tract),https://www.census.gov/programs-surveys/sahie/data/datasets.html,stream_B,verified
+B010,County Health Rankings homepage indicates no typical 2026 annual release; 2014-2023 mortality data referenced,https://www.countyhealthrankings.org/,stream_B,verified
+B011,ACS 2020-2024 5-year estimates released December 2025 accessible via data.census.gov and the Census API,https://www.census.gov/programs-surveys/acs/data.html,stream_B,verified
+B012,IRS SOI ZIP code data covers tax years 1998 2001 2004-2022 as ZIP-compressed state Excel files,https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-statistics-zip-code-data-soi,stream_B,verified
+B013,HUD CHAS data most recent release is 2018-2022 ACS-based released 23 December 2025 with tract/place/MCD/county/state geographies and CSV format,https://www.huduser.gov/portal/datasets/cp.html,stream_B,verified
+B014,HUD Picture of Subsidized Households 2024 data dictionary available on HUD USER portal,https://www.huduser.gov/portal/datasets/assthsg.html,stream_B,verified
+B015,HUD Fair Market Rents FY2026 effective 21 May 2026 available at HUD USER with API,https://www.huduser.gov/portal/datasets/fmr.html,stream_B,verified
+B016,HMDA Data Browser hosted at ffiec.cfpb.gov with 2025 Modified LAR released April 2026,https://ffiec.cfpb.gov/data-browser/,stream_B,verified
+B017,Opportunity Insights publishes Opportunity Atlas and Social Capital Atlas with tract-level data downloadable in CSV and STATA,https://opportunityinsights.org/data/,stream_B,verified
+B018,Cook County Assessor open data available on Cook County Data Portal with CCAO tag; CCAO also maintains GitHub repo,https://datacatalog.cookcountyil.gov/browse?tags=cook%20county%20assessor,stream_B,verified
+B019,USDA Food Access Research Atlas current vintage 2019 with tract-level LILATracts flag and Shapefile/XLSX format,https://www.ers.usda.gov/data-products/food-access-research-atlas,stream_B,verified
+B020,USDA Food Environment Atlas updated 3 March 2026 with county-level food environment indicators,https://www.ers.usda.gov/data-products/food-environment-atlas,stream_B,verified
+B021,USDA SNAP Retailer Locator historical data current through 31 December 2025 available as zipped CSV,https://www.fns.usda.gov/snap/retailer-locator,stream_B,verified
+B022,EPA EJScreen was removed from the EPA website on 5 February 2025; Public Environmental Data Partners hosts reconstructed 2.3 version,https://pedp-ejscreen.azurewebsites.net/,stream_B,verified
+B023,EJScreen 2015-2023 data available in Harvard Dataverse archive,https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/RLR5AX,stream_B,verified
+B024,EPA AirNow offers real-time PM2.5 and ozone data via API at docs.airnowapi.org,https://www.airnow.gov/,stream_B,verified
+B025,NaNDA National Neighborhood Data Archive hosted on ICPSR with tract ZCTA and county tables,https://www.icpsr.umich.edu/web/ICPSR/series/1920,stream_B,verified
+B026,FBI Crime Data Explorer hosts bulk NIBRS files including master files back to 1985,https://cde.ucr.cjis.gov/,stream_B,verified
+B027,Gun Violence Archive provides Export to CSV from report pages; mass shooting report 2026 available,https://www.gunviolencearchive.org/,stream_B,verified
+B028,Head Start Service Location Datasets builder available on headstart.gov,https://headstart.gov/about-us/article/head-start-service-location-datasets,stream_B,verified
+B029,SAMHSA N-SSATS and N-MHSS were merged in 2021 into N-SUMHSS; 2024 survey data available,https://www.samhsa.gov/data/data-we-collect/n-sumhss-national-substance-use-and-mental-health-services-survey,stream_B,verified
+B030,HRSA UDS 2024 Health Center data available on HRSA Data Warehouse with February 2025 submission deadline,https://data.hrsa.gov/topics/health-centers/uds,stream_B,verified
+B031,HRSA AHRF 2024-2025 release on HRSA Data Warehouse with 86 files updated 18 December 2025 county-level,https://data.hrsa.gov/data/download,stream_B,verified
+B032,Mapping Inequality HOLC project on University of Richmond DSL hosts 7148 neighborhoods across 143 cities in Shapefile and GeoJSON,https://dsl.richmond.edu/panorama/redlining/,stream_B,verified
+B033,Chicago Crimes 2001 to Present dataset on Chicago Data Portal with Socrata API and daily update,https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-Present/ijzp-q8t2,stream_B,verified
+B034,Illinois IDPH Vital Statistics page publishes Chicago and county-level vital records including infant mortality 1920-2018,https://dph.illinois.gov/data-statistics/vital-statistics.html,stream_B,flagged_ui_only_no_bulk_download
+B035,AFFH Data Tool (AFFH-T) remained accessible in 2026 but HUD withdrew the 2023 AFFH rule in March 2025 in favor of self-certification,https://www.hudexchange.info/trainings/affh-t-video-series/,stream_B,verified_with_caveat
+B036,Eviction Lab data accessible via email form with tract and block-group level 2000-2016 historical plus ongoing tracking,https://evictionlab.org/get-the-data/,stream_B,verified
+B037,Metropolitan Planning Council Chicago operates at metroplanning.org with transit zoning and planning research resources,https://metroplanning.org/,stream_B,verified
+B038,Northwestern Institute for Policy Research maintains Research Tools & Apps at ipr.northwestern.edu,https://ipr.northwestern.edu/,stream_B,verified_structure_only
+B039,CDC PLACES 2024 release shifted to 2020 census-tract geographies from 2010 geographies used in prior releases,https://www.cdc.gov/places/about/index.html,stream_B,verified
+B040,HUD Housing Choice Voucher poverty-map tool at huduser.gov/portal/maps/hcv is marked as no longer updated,https://www.huduser.gov/portal/maps/hcv/home.html,stream_B,verified_deprecated
+C001,"Englewood 2023 population = 21,411",https://en.wikipedia.org/wiki/Englewood,_Chicago,stream_C,verified_secondary
+C002,Englewood 2023 racial composition: 88.0% Black / 7.0% Hispanic / 1.4% White,https://en.wikipedia.org/wiki/Englewood,_Chicago,stream_C,verified_secondary
+C003,"Englewood 2020 median household income = $22,228",https://en.wikipedia.org/wiki/Englewood,_Chicago,stream_C,verified_secondary
+C004,Englewood 2008-2012 poverty rate = 46.6% of households below poverty line,https://en.wikipedia.org/wiki/Englewood,_Chicago,stream_C,verified_secondary
+C005,Englewood 2008-2012 unemployment rate (16+) = 28%,https://en.wikipedia.org/wiki/Englewood,_Chicago,stream_C,verified_secondary
+C006,Englewood life expectancy ~60 years (recent),https://theclick.news/life-expectancy-between-two-chicago-neighborhoods-reveals-years-of-systemic-racism/,stream_C,verified_tier3
+C007,Chicago Englewood West Englewood North Lawndale West Garfield Park East Garfield Park all had LE <70 in 2023,https://www.chicago.gov/content/dam/city/depts/cdph/statistics_and_reports/2025/2023-Life-Expectancy-Data-Brief_Final-for-Public-Release-09.10.2025.pdf,stream_C,verified_primary
+C008,Chicago citywide life expectancy 2023 = 78.7 years,https://www.chicago.gov/content/dam/city/depts/cdph/statistics_and_reports/2025/2023-Life-Expectancy-Data-Brief_Final-for-Public-Release-09.10.2025.pdf,stream_C,verified_primary
+C009,Black Chicagoans LE 2023 = 71.8 years; Asian/PI 86.8 years; gap 10.6 years,https://www.chicago.gov/content/dam/city/depts/cdph/statistics_and_reports/2025/2023-Life-Expectancy-Data-Brief_Final-for-Public-Release-09.10.2025.pdf,stream_C,verified_primary
+C010,"Chicago Lawn 2023 population = 53,460 (Wikipedia) or 55,789 (Point2)",https://en.wikipedia.org/wiki/Chicago_Lawn,_Chicago,stream_C,verified_secondary
+C011,Chicago Lawn 2023 racial composition: 61.7% Hispanic / 33.4% Black / 2.1% White,https://en.wikipedia.org/wiki/Chicago_Lawn,_Chicago,stream_C,verified_secondary
+C012,"Chicago Lawn 2023 median HH income = $46,945 (Point2); 2020 = $36,278 (Wikipedia)",https://www.point2homes.com/US/Neighborhood/IL/Chicago/Chicago-Lawn-Demographics.html,stream_C,verified_secondary
+C013,Chicago Lawn poverty rate 2023 ~19.2%,https://www.point2homes.com/US/Neighborhood/IL/Chicago/Chicago-Lawn-Demographics.html,stream_C,verified_secondary
+C014,USALEEP national coverage 65662 census tracts 2010-2015,https://www.cdc.gov/nchs/nvss/usaleep/usaleep.html,stream_C,verified_primary
+C015,HOLC 1935-1940 yellowlined/redlined Englewood Oakland Washington Park Woodlawn West Englewood Fuller Park,https://www.housingstudies.org/news/following-yellowlined-road/,stream_C,verified_tier2
+C016,West Englewood 2023 life expectancy = 66.2 years,https://www.chicago.gov/content/dam/city/depts/cdph/statistics_and_reports/2025/2023-Life-Expectancy-Data-Brief_Final-for-Public-Release-09.10.2025.pdf,stream_C,verified_primary
+C017,Auburn Gresham 2023 life expectancy = 66.2 years,https://www.chicago.gov/content/dam/city/depts/cdph/statistics_and_reports/2025/2023-Life-Expectancy-Data-Brief_Final-for-Public-Release-09.10.2025.pdf,stream_C,verified_primary
+C018,Roseland life expectancy = 66.9 years (2022 reference),https://www.chicago.gov/content/dam/city/depts/cdph/statistics_and_reports/2025/2023-Life-Expectancy-Data-Brief_Final-for-Public-Release-09.10.2025.pdf,stream_C,verified_primary
+C019,North Lawndale 2023 life expectancy = 63.9 years,https://abc7chicago.com/post/chicago-racial-life-expectancy-gap/15912952/,stream_C,verified_secondary
+C020,"Milwaukee ZIP 53206 population 22,816 91.4% Black 37.5% poverty",https://www.city-data.com/zips/53206.html,stream_C,verified_secondary
+C021,ZIP 53206 life expectancy = 71.3 years (LeCounte & Swain 2019),https://pmc.ncbi.nlm.nih.gov/articles/PMC6664354/,stream_C,verified_primary
+C022,ZIP 53206 vs 53217 life expectancy gap = 12 years (71.3 vs 83.2),https://pmc.ncbi.nlm.nih.gov/articles/PMC6664354/,stream_C,verified_primary
+C023,Detroit census tract LE range 62-90; 14 inner-city tracts LE 62-65,http://www.drawingdetroit.com/lifeexpectancy/,stream_C,verified_secondary
+C024,Highland Park (Detroit) adult poverty rate 44.7%,http://www.drawingdetroit.com/poverty1/,stream_C,verified_secondary
+C025,Sandtown-Winchester (Baltimore) life expectancy = 70.0 years,https://health.baltimorecity.gov/neighborhood-health-profile-reports,stream_C,verified_primary
+C026,Upton/Druid Heights (Baltimore) life expectancy = 68.2 years,https://health.baltimorecity.gov/neighborhood-health-profile-reports,stream_C,verified_primary
+C027,Strawberry Mansion (Philadelphia tract 151.02) median LE ~64 years,https://www.inquirer.com/health/life-expectancy-project-philadelphia-new-jersey-census-tract-20181218.html,stream_C,verified_secondary
+C028,Newark Black residents LE 71.9 years (Black men 67.4; Black women 75.9),https://measureofamerica.org/newark/,stream_C,verified_primary
+C029,"Ferguson MO 2010-2014 poverty doubled; unemployment rose 5% to 13%; 67% Black by 2008-2012",https://fivethirtyeight.com/features/ferguson-missouri/,stream_C,verified_secondary
+C030,"Gary IN 2023 76.5% Black 33.1% poverty median HH income $37,380",https://www.census.gov/quickfacts/garycityindiana,stream_C,verified_primary
+C031,Chinatown Manhattan life expectancy = 93.6 years (tract-level),https://nyhealthfoundation.org/resource/life-expectancy-by-census-tract-in-new-york-state/,stream_C,verified_primary
+C032,Manhattan CD3 (Chinatown/LES/East Village) LE 82.2 years (2018),https://helmsleytrust.org/news-and-insights/data2go-nyc-shows-stark-differences-in-well-being-life-expectancy-across-new-york-citys-nearly-200-neighborhoods-with-life-expectancy-ranging-from-73-6-years-at-its-lowest-to-91-at-its-high/,stream_C,verified_primary
+C033,Sunset Park Brooklyn (CB7) life expectancy = 82.6 years,https://nyulangone.org/files/sunset-park-data-glance.pdf,stream_C,verified_primary
+C034,Little Havana (Miami) average life expectancy = 80.56 years,https://www.mycaringplan.com/senior-living/little-havana-living/,stream_C,verified_secondary
+C035,Little Havana 95.3% Hispanic,https://www.mycaringplan.com/senior-living/little-havana-living/,stream_C,verified_secondary
+C036,"Mattapan (Boston) life expectancy = 77.3 years; Back Bay 82.8 years; lowest Roxbury tract 68.8 years",https://www.boston.gov/sites/default/files/file/2024/03/HOB_Mortality_LE_2023_FINAL_Corr_032524.pdf,stream_C,verified_primary
+C037,Hispanic Mortality Paradox meta-analysis: Hispanic populations had 17.5% lower mortality risk (OR 0.825 95% CI 0.75-0.91) Ruiz Steffen Smith 2013 AJPH,https://pmc.ncbi.nlm.nih.gov/articles/PMC3673509/,stream_C,verified_primary
+C038,"Markides & Coreil 1986 original Hispanic paradox statement; Public Health Reports 101(3):253-265",https://pubmed.ncbi.nlm.nih.gov/3086917/,stream_C,verified_primary
+C039,Palloni & Arias 2004 Demography 41(3):385-415 DOI 10.1353/dem.2004.0024 paradox attributed in part to salmon-bias/return-migration for foreign-born Mexicans,https://link.springer.com/article/10.1353/dem.2004.0024,stream_C,verified_primary
+C040,Bor et al. 2023 PNAS Nexus: Hispanic mortality advantage largely erased during COVID-19 pandemic DOI 10.1093/pnasnexus/pgad173,https://www.statnews.com/2023/09/14/hispanic-paradox-life-expectancy-research/,stream_C,verified_secondary
+C041,Boyle Heights 88.1% Hispanic median HH income $49734,https://www.buildinghealthycommunities.org/boyle-heights/,stream_C,verified_secondary
+C042,East Harlem + Central Harlem combined 228500 people 34% Hispanic 57% Black,https://pmc.ncbi.nlm.nih.gov/articles/PMC4301305/,stream_C,verified_primary
+C043,East Harlem asthma rate 5x national average; obesity 33%; diabetes 13%,https://pmc.ncbi.nlm.nih.gov/articles/PMC4301305/,stream_C,verified_primary
+C044,Chelsea MA 65% Hispanic; 45% foreign-born in 2023; 16.3% family poverty,https://www.neilsberg.com/insights/chelsea-ma-population-by-race/,stream_C,verified_secondary
+C045,Washington Heights 64.1% Hispanic 2020; 62% of Latinos are Dominican,https://en.wikipedia.org/wiki/Washington_Heights,_Manhattan,stream_C,verified_secondary
+C046,Little Village Chicago 81% Latinx 75% Mexican; 37% foreign-born; 24% poverty; per capita income $14234,https://www.enlacechicago.org/little-village-today,stream_C,verified_secondary
+C047,Texas Hispanic LE 81.2 years; White 78.1; Black 75.3,https://www.utsouthwestern.edu/ctplus/stories/2019/life-expectancy-texas.html,stream_C,verified_primary
+C048,Miami-Dade lowest premature age-adjusted mortality among major Florida counties,https://www.floridatrend.com/article/25064/how-healthy-is-florida/,stream_C,verified_secondary
+C049,Orange Mound Memphis population 11430; 33% below poverty,https://www.point2homes.com/US/Neighborhood/TN/Memphis/Orange-Mound-Demographics.html,stream_C,verified_secondary
+C050,US Hispanic LE 2023 = 81.3 years (F 84; M 78.5); all races 78.4,https://minorityhealth.hhs.gov/hispaniclatino-health,stream_C,verified_primary
+E001,"Englewood (Chicago Community Area 68) life expectancy 67.7 years in 2023","https://www.chicago.gov/content/dam/city/depts/cdph/statistics_and_reports/2025/2023-Life-Expectancy-Data-Brief_Final-for-Public-Release-09.10.2025.ax.em.pdf",stream_E,verified
+E002,"Chicago citywide life expectancy 78.7 years in 2023","https://www.chicago.gov/city/en/depts/cdph/provdrs/health_protection_and_response/news/2025/sep/cdph-press-release-09-10-2025.html",stream_E,verified
+E003,"Little Village / South Lawndale (Community Area 30) life expectancy approximately 82 years","https://chicagohealthatlas.org/neighborhood/1714000-30; Chicago Magazine 'A Second City' 2018 citing CDPH",stream_E,verified
+E004,"Washington Heights / Inwood (Manhattan CD 12) life expectancy 84.0 years in 2018","https://www.nyc.gov/assets/doh/downloads/pdf/data/2018chp-mn12.pdf",stream_E,verified
+E005,"NYC citywide life expectancy 81.2 years in 2018, 82.6 years in 2023, 83.2 years in 2024 provisional","https://www.nyc.gov/site/doh/about/press/pr2025/new-yorkers-life-expectancy-increased-to-pre-pandemic-high.page",stream_E,verified
+E006,"Sunset Park (Brooklyn CD 7) life expectancy 82.6 years in 2018","https://www.nyc.gov/assets/doh/downloads/pdf/data/2018chp-bk407.pdf",stream_E,verified
+E007,"Manhattan CD 3 (Chinatown / LES / East Village) life expectancy 82.2 years in 2018","https://www.nyc.gov/site/doh/data/data-publications/profiles.page",stream_E,verified
+E008,"Chinatown core census tract in lower Manhattan life expectancy 93.6 years","https://nyhealthfoundation.org/resource/life-expectancy-by-census-tract-in-new-york-state/",stream_E,verified
+E009,"Jackson Heights (Queens CD 3) life expectancy approximately 83 years in 2018","NYC DOHMH CHP 2018 Jackson Heights (QN03)",stream_E,verified
+E010,"East Harlem (Manhattan CD 11) life expectancy approximately 78.5 years","NYC DOHMH Community Health Profiles (2018/2021)",stream_E,verified
+E011,"Boyle Heights life expectancy approximately 3 years below LA City average (LA City ~80.6, Boyle Heights ~77.6)","https://apps.gis.lacounty.gov/static/DPH/chp-reports/CHP%20Report%20-%20Boyle%20Heights.pdf",stream_E,verified
+E012,"LA County median life expectancy 80.6 years","https://apps.gis.lacounty.gov/static/DPH/community-profiles/",stream_E,verified
+E013,"Back Bay (Boston) life expectancy approximately 91.9 years; Nubian Square / Roxbury approximately 69 years (23-year gap)","https://www.boston.gov/sites/default/files/file/2024/03/HOB_Mortality_LE_2023_FINAL_Corr_032524.pdf; https://www.wbur.org/news/2023/05/11/boston-life-expectancy-gap-back-bay-roxbury",stream_E,verified
+E014,"Massachusetts state life expectancy 80.1 years, 2nd in nation","https://www.wgbh.org/news/health/2024-08-21/massachusetts-ranks-2nd-in-nation-for-life-expectancy-but-massive-gaps-remain-experts-say",stream_E,verified
+E015,"Massachusetts Hispanic women life expectancy approximately 89 years","GBH reporting of MA DPH data, 2024",stream_E,verified
+E016,"Chelsea MA approximately 45% foreign-born, approximately 62% Latino","https://www.census.gov/quickfacts/fact/table/chelseacitymassachusetts/PST045224",stream_E,verified
+E017,"Cuba national life expectancy 78.3 years in 2024","https://data.who.int/countries/192",stream_E,verified
+E018,"Florida state life expectancy 78.9 years","Miami-Dade CHA 2019",stream_E,verified
+E019,"Hialeah 95% Hispanic, approximately 74% foreign-born","https://www.census.gov/quickfacts/hialeahcityflorida",stream_E,verified
+E020,"Mantua (West Philadelphia) life expectancy 66 years","https://www.inquirer.com/health/life-expectancy-project-philadelphia-new-jersey-census-tract-20181218.html",stream_E,verified
+E021,"Spring Garden (Philadelphia) life expectancy 87+ years","https://www.inquirer.com/health/life-expectancy-project-philadelphia-new-jersey-census-tract-20181218.html",stream_E,verified
+E022,"Ruiz 2013 meta-analysis: Hispanic populations 17.5% lower mortality risk (OR 0.825, 95% CI 0.75-0.91), 58 studies, 4.6 million participants","https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2012.301103",stream_E,verified
+E023,"Markides & Coreil 1986 originated 'Hispanic Epidemiological Paradox' term; cited 1500+ times","https://pubmed.ncbi.nlm.nih.gov/3086917/",stream_E,verified
+E024,"Palloni & Arias 2004 concluded salmon bias explains foreign-born Mexican mortality advantage; other foreign-born Hispanic advantage not explained by salmon bias","https://pubmed.ncbi.nlm.nih.gov/15461007/",stream_E,verified
+E025,"Sampson Raudenbush Earls 1997 Science: 2-SD increase in collective efficacy associated with 40% lower expected homicide rate","https://pubmed.ncbi.nlm.nih.gov/9252316/",stream_E,verified
+E026,"Buettner Power 9: 263 of 263 centenarians except 5 belonged to faith community; attending religious services 4x/month adds 4-14 years LE","https://www.bluezones.com/2016/11/power-9/",stream_E,verified
+E027,"Starr County TX residents 'routinely live to 80+' despite 30% poverty, 25%+ uninsured","https://www.texastribune.org/2011/01/16/border-counties-have-some-of-texas-longest-lives/",stream_E,verified
+E028,"Eschbach Ostir Patel Markides Goodwin 2004 Am J Public Health: older Mexican Americans in high Mexican-density tracts had lower mortality","https://pmc.ncbi.nlm.nih.gov/articles/PMC1448538/",stream_E,verified
+E029,"West Garfield Park (Chicago) life expectancy 69 years","https://www.chicagomag.com/city-life/february-2018/a-second-city-west-side-health-life-expectancy/",stream_E,verified
+E030,"Minneapolis Somali community: 34% of Somalis ages 25-64 lack high school diploma vs 6% of all Minnesotans","https://snpalliance.org/wp-content/uploads/2021/02/UCare-Somali-Circles-of-Health-Jan-2020.pdf",stream_E,verified
+E031,"Sunset Park Brooklyn poverty rate 29% vs 21% Brooklyn, 20% NYC in 2018","https://www.nyc.gov/assets/doh/downloads/pdf/data/2018chp-bk407.pdf",stream_E,verified
+E032,"Washington Heights / Inwood LE 2.8 years greater than NYC citywide, 5.3 years greater than US average in 2018","https://www.nyc.gov/assets/doh/downloads/pdf/data/2018chp-mn12.pdf",stream_E,verified
+F-001,"Eviction judgment associated with 40% higher mortality (95% CI 36-43%)",Graetz et al. Soc Sci Med 2024 DOI 10.1016/j.socscimed.2023.116494,Stream F,verified
+F-002,"Customized search assistance raised share moving to high-opportunity tract from 15% to 53%",Bergman/Chetty et al. AER 2024 DOI 10.1257/aer.20200407,Stream F,verified
+F-003,"Medically tailored meals cut hospitalizations 47% (95% CI 36-58%) in meta-analysis modeled to 50 states",Deng/Mozaffarian Health Affairs 2025 DOI 10.1377/hlthaff.2024.01307,Stream F,verified
+F-004,"READI Chicago: shooting/homicide arrests -65% in full sample; -79% in outreach-referred subgroup (stat. sig. after adjustment); BCR 4:1 to 18:1",Bhatt/Heller et al. QJE 2024 DOI 10.3386/w30852,Stream F,verified
+F-005,"Massachusetts Flexible Services: -23% hospitalizations -13% ED visits",Hager et al. Health Affairs 2025 DOI 10.1377/hlthaff.2024.01409,Stream F,verified
+F-006,"OpenResearch UBI: -4.1 pp labor-force participation, -1 to -2 hours/week worked",Vivalt/Rhodes/Bartik NBER 32719,Stream F,verified
+F-007,"Vacant-lot redevelopment DiD 2007-2023: aggravated assault -56.6/sq mi/yr (95% CI -97.9 to -15.2)",Asa et al. AJPH 2026 DOI 10.2105/AJPH.2025.308269,Stream F,verified
+F-008,"Intensive food-as-medicine RCT: null on HbA1c (adjusted diff -0.10, 95% CI -0.46 to 0.25, P=.57)",Doyle/Alsan JAMA Intern Med 2024 DOI 10.1001/jamainternmed.2023.6670,Stream F,verified
+F-009,"Produce Rx RCT: HbA1c 0.20 pp higher than usual care (95% CI 0.05-0.35) at 12 months",Drake et al. JAMA Intern Med 2026 DOI 10.1001/jamainternmed.2025.8008,Stream F,verified
+F-010,"NC Healthy Opportunities Pilots: $85/enrollee/month medical-cost savings; 265k services to 20k enrollees",Van Vleet NC Med J 2024 DOI 10.18043/001c.94844,Stream F,verified
+F-011,"CHW interventions cost-effective in 70% of 50 reviewed studies; median cost/QALY $3,967 (2024 USD)",Van Iseghem et al. Value in Health 2026 DOI 10.1016/j.jval.2025.09.004,Stream F,verified
+F-012,"Naloxone community distribution: 98.3% survival when administered by PWUD (95% CI 97.5-98.8%)",Fischer et al. BMC Public Health 2025 DOI 10.1186/s12889-025-22210-8,Stream F,verified
+F-013,"Stockton SEED RCT: Kessler-10 distress 21.3 to 18.4 (P=.027); income volatility 19% vs 26% (P=.039)",West & Castro J Urban Health 2023 DOI 10.1007/s11524-023-00723-0,Stream F,verified
+F-014,"Collaborative care IPD meta-analysis: therapeutic-treatment-strategy component interaction coefficient -0.07 on depression (P<0.001)",Schillok et al. JAMA Psychiatry 2025 DOI 10.1001/jamapsychiatry.2025.0183,Stream F,verified
+F-015,"2021 CTC expansion linked to fewer depressive/anxiety symptoms in low-income adults; larger reductions for Black/Hispanic parents",Hamad et al. Health Affairs 2023 DOI 10.1377/hlthaff.2022.00733,Stream F,verified
+F-016,"Green-space exposure reduces odds of depression OR 0.89 (95% CI 0.86-0.93)",Liu et al. meta-analysis 2024 PMC10885792,Stream F,verified
+F-017,"EPA 2024 PM2.5 NAAQS (9 μg/m³) estimated to prevent up to 4500 premature deaths/year and $46B net health benefit by 2032",EPA RIA 2024 final rule,Stream F,verified
+F-018,"Urban tree canopy reduces summer mean air temps ~1.0°C; could offset 40-99% of projected 2050 heat-mortality increase",Greene et al. npj Urban Sustainability 2024 DOI 10.1038/s42949-024-00150-3,Stream F,verified
+F-019,"States lifting COVID eviction moratoriums had 5.4x COVID mortality (95% CI 3.1-9.3) at 16 weeks post-expiration",Leifheit et al. AJE 2021 DOI 10.1093/aje/kwab196,Stream F,verified (SUPPLEMENTARY)
+F-020,"CLT qualitative study identifies 5 mechanisms linking CLT to health: stability, unit quality, amenities, services, governance",Arcaya et al. J Urban Health 2023 DOI 10.1007/s11524-022-00706-7,Stream F,verified

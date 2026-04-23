@@ -1,0 +1,41 @@
+claim_id,claim_text,source,verifier,status
+B001,CDC PLACES publishes census-tract-level chronic-disease prevalence for 83522 tracts in the 2025 release covering BRFSS 2022 and ACS 2018-2022,https://data.cdc.gov/500-Cities-Places/PLACES-Local-Data-for-Better-Health-Census-Tract-D/cwsq-ngmh,stream_B,verified
+B002,CDC PLACES landing page confirms data portal and tract/ZCTA/place/county geographies available,https://www.cdc.gov/places/index.html,stream_B,verified
+B003,USALEEP census-tract life expectancy data covers 2010-2015 deaths and is hosted on the CDC FTP server,https://www.cdc.gov/nchs/nvss/usaleep/usaleep.html,stream_B,verified
+B004,USALEEP raw files available at the CDC Health Statistics FTP in XLSX and CSV,https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/NVSS/USALEEP/,stream_B,verified
+B005,CDC WONDER provides underlying-cause-of-death micro-queries from 1999 to present with small-cell suppression for cells under 10 deaths,https://wonder.cdc.gov/,stream_B,verified
+B006,NCHS NVSS downloadable final data available via CDC WONDER for public use and via NCHS Research Data Center for restricted micro-data,https://www.cdc.gov/nchs/nvss/index.htm,stream_B,verified
+B007,Chicago Health Atlas hosts 160+ community-area health indicators with CSV/XLSX bulk download,https://chicagohealthatlas.org/download,stream_B,verified
+B008,BRFSS SMART MMSA 2023 data released December 2024 available as ASCII and SAS XPT,https://www.cdc.gov/brfss/smart/smart_2023.html,stream_B,verified
+B009,SAHIE Small Area Health Insurance Estimates covers 2008-2023 at state and county level (no tract),https://www.census.gov/programs-surveys/sahie/data/datasets.html,stream_B,verified
+B010,County Health Rankings homepage indicates no typical 2026 annual release; 2014-2023 mortality data referenced,https://www.countyhealthrankings.org/,stream_B,verified
+B011,ACS 2020-2024 5-year estimates released December 2025 accessible via data.census.gov and the Census API,https://www.census.gov/programs-surveys/acs/data.html,stream_B,verified
+B012,IRS SOI ZIP code data covers tax years 1998 2001 2004-2022 as ZIP-compressed state Excel files,https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-statistics-zip-code-data-soi,stream_B,verified
+B013,HUD CHAS data most recent release is 2018-2022 ACS-based released 23 December 2025 with tract/place/MCD/county/state geographies and CSV format,https://www.huduser.gov/portal/datasets/cp.html,stream_B,verified
+B014,HUD Picture of Subsidized Households 2024 data dictionary available on HUD USER portal,https://www.huduser.gov/portal/datasets/assthsg.html,stream_B,verified
+B015,HUD Fair Market Rents FY2026 effective 21 May 2026 available at HUD USER with API,https://www.huduser.gov/portal/datasets/fmr.html,stream_B,verified
+B016,HMDA Data Browser hosted at ffiec.cfpb.gov with 2025 Modified LAR released April 2026,https://ffiec.cfpb.gov/data-browser/,stream_B,verified
+B017,Opportunity Insights publishes Opportunity Atlas and Social Capital Atlas with tract-level data downloadable in CSV and STATA,https://opportunityinsights.org/data/,stream_B,verified
+B018,Cook County Assessor open data available on Cook County Data Portal with CCAO tag; CCAO also maintains GitHub repo,https://datacatalog.cookcountyil.gov/browse?tags=cook%20county%20assessor,stream_B,verified
+B019,USDA Food Access Research Atlas current vintage 2019 with tract-level LILATracts flag and Shapefile/XLSX format,https://www.ers.usda.gov/data-products/food-access-research-atlas,stream_B,verified
+B020,USDA Food Environment Atlas updated 3 March 2026 with county-level food environment indicators,https://www.ers.usda.gov/data-products/food-environment-atlas,stream_B,verified
+B021,USDA SNAP Retailer Locator historical data current through 31 December 2025 available as zipped CSV,https://www.fns.usda.gov/snap/retailer-locator,stream_B,verified
+B022,EPA EJScreen was removed from the EPA website on 5 February 2025; Public Environmental Data Partners hosts reconstructed 2.3 version,https://pedp-ejscreen.azurewebsites.net/,stream_B,verified
+B023,EJScreen 2015-2023 data available in Harvard Dataverse archive,https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/RLR5AX,stream_B,verified
+B024,EPA AirNow offers real-time PM2.5 and ozone data via API at docs.airnowapi.org,https://www.airnow.gov/,stream_B,verified
+B025,NaNDA National Neighborhood Data Archive hosted on ICPSR with tract ZCTA and county tables,https://www.icpsr.umich.edu/web/ICPSR/series/1920,stream_B,verified
+B026,FBI Crime Data Explorer hosts bulk NIBRS files including master files back to 1985,https://cde.ucr.cjis.gov/,stream_B,verified
+B027,Gun Violence Archive provides Export to CSV from report pages; mass shooting report 2026 available,https://www.gunviolencearchive.org/,stream_B,verified
+B028,Head Start Service Location Datasets builder available on headstart.gov,https://headstart.gov/about-us/article/head-start-service-location-datasets,stream_B,verified
+B029,SAMHSA N-SSATS and N-MHSS were merged in 2021 into N-SUMHSS; 2024 survey data available,https://www.samhsa.gov/data/data-we-collect/n-sumhss-national-substance-use-and-mental-health-services-survey,stream_B,verified
+B030,HRSA UDS 2024 Health Center data available on HRSA Data Warehouse with February 2025 submission deadline,https://data.hrsa.gov/topics/health-centers/uds,stream_B,verified
+B031,HRSA AHRF 2024-2025 release on HRSA Data Warehouse with 86 files updated 18 December 2025 county-level,https://data.hrsa.gov/data/download,stream_B,verified
+B032,Mapping Inequality HOLC project on University of Richmond DSL hosts 7148 neighborhoods across 143 cities in Shapefile and GeoJSON,https://dsl.richmond.edu/panorama/redlining/,stream_B,verified
+B033,Chicago Crimes 2001 to Present dataset on Chicago Data Portal with Socrata API and daily update,https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-Present/ijzp-q8t2,stream_B,verified
+B034,Illinois IDPH Vital Statistics page publishes Chicago and county-level vital records including infant mortality 1920-2018,https://dph.illinois.gov/data-statistics/vital-statistics.html,stream_B,flagged_ui_only_no_bulk_download
+B035,AFFH Data Tool (AFFH-T) remained accessible in 2026 but HUD withdrew the 2023 AFFH rule in March 2025 in favor of self-certification,https://www.hudexchange.info/trainings/affh-t-video-series/,stream_B,verified_with_caveat
+B036,Eviction Lab data accessible via email form with tract and block-group level 2000-2016 historical plus ongoing tracking,https://evictionlab.org/get-the-data/,stream_B,verified
+B037,Metropolitan Planning Council Chicago operates at metroplanning.org with transit zoning and planning research resources,https://metroplanning.org/,stream_B,verified
+B038,Northwestern Institute for Policy Research maintains Research Tools & Apps at ipr.northwestern.edu,https://ipr.northwestern.edu/,stream_B,verified_structure_only
+B039,CDC PLACES 2024 release shifted to 2020 census-tract geographies from 2010 geographies used in prior releases,https://www.cdc.gov/places/about/index.html,stream_B,verified
+B040,HUD Housing Choice Voucher poverty-map tool at huduser.gov/portal/maps/hcv is marked as no longer updated,https://www.huduser.gov/portal/maps/hcv/home.html,stream_B,verified_deprecated

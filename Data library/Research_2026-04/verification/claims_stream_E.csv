@@ -1,0 +1,33 @@
+claim_id,claim_text,source,verifier,status
+E001,"Englewood (Chicago Community Area 68) life expectancy 67.7 years in 2023","https://www.chicago.gov/content/dam/city/depts/cdph/statistics_and_reports/2025/2023-Life-Expectancy-Data-Brief_Final-for-Public-Release-09.10.2025.ax.em.pdf",stream_E,verified
+E002,"Chicago citywide life expectancy 78.7 years in 2023","https://www.chicago.gov/city/en/depts/cdph/provdrs/health_protection_and_response/news/2025/sep/cdph-press-release-09-10-2025.html",stream_E,verified
+E003,"Little Village / South Lawndale (Community Area 30) life expectancy approximately 82 years","https://chicagohealthatlas.org/neighborhood/1714000-30; Chicago Magazine 'A Second City' 2018 citing CDPH",stream_E,verified
+E004,"Washington Heights / Inwood (Manhattan CD 12) life expectancy 84.0 years in 2018","https://www.nyc.gov/assets/doh/downloads/pdf/data/2018chp-mn12.pdf",stream_E,verified
+E005,"NYC citywide life expectancy 81.2 years in 2018, 82.6 years in 2023, 83.2 years in 2024 provisional","https://www.nyc.gov/site/doh/about/press/pr2025/new-yorkers-life-expectancy-increased-to-pre-pandemic-high.page",stream_E,verified
+E006,"Sunset Park (Brooklyn CD 7) life expectancy 82.6 years in 2018","https://www.nyc.gov/assets/doh/downloads/pdf/data/2018chp-bk407.pdf",stream_E,verified
+E007,"Manhattan CD 3 (Chinatown / LES / East Village) life expectancy 82.2 years in 2018","https://www.nyc.gov/site/doh/data/data-publications/profiles.page",stream_E,verified
+E008,"Chinatown core census tract in lower Manhattan life expectancy 93.6 years","https://nyhealthfoundation.org/resource/life-expectancy-by-census-tract-in-new-york-state/",stream_E,verified
+E009,"Jackson Heights (Queens CD 3) life expectancy approximately 83 years in 2018","NYC DOHMH CHP 2018 Jackson Heights (QN03)",stream_E,verified
+E010,"East Harlem (Manhattan CD 11) life expectancy approximately 78.5 years","NYC DOHMH Community Health Profiles (2018/2021)",stream_E,verified
+E011,"Boyle Heights life expectancy approximately 3 years below LA City average (LA City ~80.6, Boyle Heights ~77.6)","https://apps.gis.lacounty.gov/static/DPH/chp-reports/CHP%20Report%20-%20Boyle%20Heights.pdf",stream_E,verified
+E012,"LA County median life expectancy 80.6 years","https://apps.gis.lacounty.gov/static/DPH/community-profiles/",stream_E,verified
+E013,"Back Bay (Boston) life expectancy approximately 91.9 years; Nubian Square / Roxbury approximately 69 years (23-year gap)","https://www.boston.gov/sites/default/files/file/2024/03/HOB_Mortality_LE_2023_FINAL_Corr_032524.pdf; https://www.wbur.org/news/2023/05/11/boston-life-expectancy-gap-back-bay-roxbury",stream_E,verified
+E014,"Massachusetts state life expectancy 80.1 years, 2nd in nation","https://www.wgbh.org/news/health/2024-08-21/massachusetts-ranks-2nd-in-nation-for-life-expectancy-but-massive-gaps-remain-experts-say",stream_E,verified
+E015,"Massachusetts Hispanic women life expectancy approximately 89 years","GBH reporting of MA DPH data, 2024",stream_E,verified
+E016,"Chelsea MA approximately 45% foreign-born, approximately 62% Latino","https://www.census.gov/quickfacts/fact/table/chelseacitymassachusetts/PST045224",stream_E,verified
+E017,"Cuba national life expectancy 78.3 years in 2024","https://data.who.int/countries/192",stream_E,verified
+E018,"Florida state life expectancy 78.9 years","Miami-Dade CHA 2019",stream_E,verified
+E019,"Hialeah 95% Hispanic, approximately 74% foreign-born","https://www.census.gov/quickfacts/hialeahcityflorida",stream_E,verified
+E020,"Mantua (West Philadelphia) life expectancy 66 years","https://www.inquirer.com/health/life-expectancy-project-philadelphia-new-jersey-census-tract-20181218.html",stream_E,verified
+E021,"Spring Garden (Philadelphia) life expectancy 87+ years","https://www.inquirer.com/health/life-expectancy-project-philadelphia-new-jersey-census-tract-20181218.html",stream_E,verified
+E022,"Ruiz 2013 meta-analysis: Hispanic populations 17.5% lower mortality risk (OR 0.825, 95% CI 0.75-0.91), 58 studies, 4.6 million participants","https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2012.301103",stream_E,verified
+E023,"Markides & Coreil 1986 originated 'Hispanic Epidemiological Paradox' term; cited 1500+ times","https://pubmed.ncbi.nlm.nih.gov/3086917/",stream_E,verified
+E024,"Palloni & Arias 2004 concluded salmon bias explains foreign-born Mexican mortality advantage; other foreign-born Hispanic advantage not explained by salmon bias","https://pubmed.ncbi.nlm.nih.gov/15461007/",stream_E,verified
+E025,"Sampson Raudenbush Earls 1997 Science: 2-SD increase in collective efficacy associated with 40% lower expected homicide rate","https://pubmed.ncbi.nlm.nih.gov/9252316/",stream_E,verified
+E026,"Buettner Power 9: 263 of 263 centenarians except 5 belonged to faith community; attending religious services 4x/month adds 4-14 years LE","https://www.bluezones.com/2016/11/power-9/",stream_E,verified
+E027,"Starr County TX residents 'routinely live to 80+' despite 30% poverty, 25%+ uninsured","https://www.texastribune.org/2011/01/16/border-counties-have-some-of-texas-longest-lives/",stream_E,verified
+E028,"Eschbach Ostir Patel Markides Goodwin 2004 Am J Public Health: older Mexican Americans in high Mexican-density tracts had lower mortality","https://pmc.ncbi.nlm.nih.gov/articles/PMC1448538/",stream_E,verified
+E029,"West Garfield Park (Chicago) life expectancy 69 years","https://www.chicagomag.com/city-life/february-2018/a-second-city-west-side-health-life-expectancy/",stream_E,verified
+E030,"Minneapolis Somali community: 34% of Somalis ages 25-64 lack high school diploma vs 6% of all Minnesotans","https://snpalliance.org/wp-content/uploads/2021/02/UCare-Somali-Circles-of-Health-Jan-2020.pdf",stream_E,verified
+E031,"Sunset Park Brooklyn poverty rate 29% vs 21% Brooklyn, 20% NYC in 2018","https://www.nyc.gov/assets/doh/downloads/pdf/data/2018chp-bk407.pdf",stream_E,verified
+E032,"Washington Heights / Inwood LE 2.8 years greater than NYC citywide, 5.3 years greater than US average in 2018","https://www.nyc.gov/assets/doh/downloads/pdf/data/2018chp-mn12.pdf",stream_E,verified

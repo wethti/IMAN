@@ -1,0 +1,93 @@
+claim_id,claim_text,source,verifier,status
+A-HC1-01,FQHC Expansion LE gain ~1.5 years,decision_tree.md,Stream A,cited
+A-HC1-02,"Medicaid expansion reduced all-cause mortality by 6.1% in near-poor adults",Sommers BD et al. NEJM 2012 (Mortality and Access to Care after State Medicaid Expansions) [evidence_base.md Healthcare],Stream A,needs_verification
+A-HC1-03,"6% mortality reduction ~ 0.7-1.5 yrs of gap closure",evidence_base.md Healthcare synthesis,Stream A,needs_verification
+A-HC2-01,CHW Programs LE gain ~1.0 year,decision_tree.md,Stream A,cited
+A-HC2-02,"Brazil Family Health Strategy CHW model reduced infant and overall mortality",Macinko J (evidence_base.md Healthcare),Stream A,needs_verification
+A-HC3-01,Medicaid Enrollment LE gain ~0.7 year,decision_tree.md,Stream A,cited
+A-HC3-02,"ACA Medicaid expansion: 6.1% mortality reduction near-poor adults",NEJMsa (evidence_base.md Healthcare),Stream A,needs_verification
+A-HC4-01,Barbershop BP Screening LE gain ~0.6 year,decision_tree.md,Stream A,cited
+A-HC4-02,"Barbershop BP trial: systolic BP control 63.6% vs 11.7% controls",Victor et al. NEJM 2018 [evidence_base.md Healthcare],Stream A,needs_verification
+A-HC4-03,"Sustained BP control reduces stroke risk ~35-40% and CV mortality ~25%",evidence_base.md Healthcare synthesis,Stream A,needs_verification
+A-HC5-01,MOUD + Naloxone LE gain ~0.8 year,decision_tree.md,Stream A,cited
+A-HC5-02,"MOUD (buprenorphine/methadone) cut all-cause mortality 50-75% vs off-treatment",evidence_base.md Healthcare,Stream A,needs_verification
+A-HC5-03,"Massachusetts naloxone distribution: 46% lower opioid overdose mortality in high-distribution communities",Walley AY et al. BMJ 2013 [evidence_base.md Healthcare],Stream A,needs_verification
+A-HC6-01,Integrated Behavioral Health LE gain ~0.8 year,decision_tree.md,Stream A,cited
+A-FA1-01,Fresh Boost / SNAP Enrollment LE gain ~0.6 year,decision_tree.md,Stream A,cited
+A-FA1-02,"SNAP associated with reduced food insecurity, low birth weight, chronic disease",Bach J (evidence_base.md Food access),Stream A,needs_verification
+A-FA2-01,WIC Access LE gain ~0.5 year,decision_tree.md,Stream A,cited
+A-FA2-02,"WIC participation improved birth weight and gestational age",Hoynes et al. (evidence_base.md Food access),Stream A,needs_verification
+A-FA3-01,Fresh Market Expansion LE gain ~0.8 year,decision_tree.md,Stream A,cited
+A-FA3-02,"PHRESH natural experiment: supermarket introduction produced modest F&V consumption gains",Dubowitz et al. (evidence_base.md Food access),Stream A,needs_verification
+A-FA4-01,SSB tax LE gain ~ [DATA GAP] - decision_tree lists no numeric estimate,decision_tree.md,Stream A,data_gap
+A-FA4-02,"Mexico SSB tax: 12% reduction in SSB purchases in first year",Colchero et al. (evidence_base.md Food access),Stream A,needs_verification
+A-FA4-03,"SSB tax studies show 10-50% reduction in SSB purchases across jurisdictions",Teng et al. (evidence_base.md Food access),Stream A,needs_verification
+A-FA5-01,EITC + Income Transfers LE gain ~0.4 year,decision_tree.md,Stream A,cited
+A-FA5-02,EITC expansions improved infant birth weight,Hoynes et al. (evidence_base.md Food access/Funding),Stream A,needs_verification
+A-HO1-01,Permanent Supportive Housing LE gain ~1.5 year,decision_tree.md,Stream A,cited
+A-HO1-02,"Housing First reduces ED use, hospitalizations, substance-related mortality",Berg RC et al. (evidence_base.md Housing),Stream A,needs_verification
+A-HO2-01,Housing Mobility Vouchers LE gain ~1.0 year,decision_tree.md,Stream A,cited
+A-HO2-02,"MTO children moving to low-poverty neighborhoods earned 31% more as adults",Chetty et al. 2016 (evidence_base.md Housing),Stream A,needs_verification
+A-HO2-03,"MTO: obesity probability reduced ~4.6 percentage points",Ludwig et al. NEJM 2011 (evidence_base.md Housing),Stream A,needs_verification
+A-HO3-01,Community Land Trusts LE gain ~0.5 year,decision_tree.md,Stream A,cited
+A-HO4-01,Mixed-Income Development LE gain ~0.7 year,decision_tree.md,Stream A,cited
+A-HO5-01,Lead Remediation LE gain ~0.6 year,decision_tree.md,Stream A,cited
+A-HO5-02,"No safe level of lead exposure in children",Lanphear B (evidence_base.md IMAN initiatives),Stream A,needs_verification
+A-ED1-01,Early Childhood Education LE gain ~2.0 year,decision_tree.md,Stream A,cited
+A-ED1-02,"Perry Preschool ROI $7-12 per $1 invested",Heckman JJ (evidence_base.md Education),Stream A,needs_verification
+A-ED2-01,Nurse-Family Partnership LE gain ~1.5 year,decision_tree.md,Stream A,cited
+A-ED2-02,"NFP: 50% reduction in child abuse and neglect",Olds et al. (evidence_base.md Education),Stream A,needs_verification
+A-ED3-01,School Funding Equity LE gain ~1.0 year,decision_tree.md,Stream A,cited
+A-ED3-02,"10% increase in per-pupil spending significantly raised adult wages, reduced incarceration",Jackson CK et al. (evidence_base.md Education),Stream A,needs_verification
+A-ED4-01,Teacher Quality Investment LE gain ~0.8 year,decision_tree.md,Stream A,cited
+A-ED4-02,"1 SD teacher value-added gain = ~$40,000 NPV per student",Chetty et al. Teachers II (evidence_base.md Education),Stream A,needs_verification
+A-ED5-01,Neighborhood Poverty Reduction LE gain ~1.5 year,decision_tree.md,Stream A,cited
+A-ED5-02,"Chicago CPC: statistically significant reductions in depression, substance use, health risk at age 37",Varshney et al. (evidence_base.md Education),Stream A,needs_verification
+A-ED5-03,"One Summer Plus RCT: 43% reduction in violent crime arrests",Heller S (evidence_base.md Education),Stream A,needs_verification
+A-MT1-01,PM2.5 Reduction / Bus Electrification LE gain ~0.4 year,decision_tree.md,Stream A,cited
+A-MT1-02,"10 ug/m3 PM2.5 reduction = 0.61 yr LE increase",Pope CA et al. NEJM (evidence_base.md Mobility),Stream A,needs_verification
+A-MT2-01,CTA Racine Green Line Reopening LE gain [DATA GAP] - decision tree lists no numeric estimate,decision_tree.md,Stream A,data_gap
+A-MT2-02,"Racine Green Line station closed 1994; reopen target 2029 per Dec 2025 IL transit bill",IMAN_initiatives_profile.md,Stream A,cited
+A-MT3-01,Safe Walking Routes LE gain ~0.3 year,decision_tree.md,Stream A,cited
+A-MT3-02,"Barcelona superblocks: 665 premature deaths prevented/yr; 0.20 yr LE increase citywide",Perez et al. (evidence_base.md Mobility),Stream A,needs_verification
+A-MT4-01,Active Transit Infrastructure LE gain ~0.2 year,decision_tree.md,Stream A,cited
+A-RC1-01,Vacant Lot Greening LE gain ~0.5 year,decision_tree.md,Stream A,cited
+A-RC1-02,"Philadelphia vacant lot greening trial: 29% reduction in gun violence in surrounding blocks",Branas CC et al. PNAS 2018 (evidence_base.md Recreation),Stream A,needs_verification
+A-RC2-01,Griot Plaza / Community Corridors LE gain [DATA GAP] - decision tree lists no numeric estimate,decision_tree.md,Stream A,data_gap
+A-RC3-01,Park & Greenspace Access LE gain ~0.3 year,decision_tree.md,Stream A,cited
+A-RC3-02,"Greenspace exposure meta-analysis: reduced all-cause, CVD mortality, T2D",Twohig-Bennett & Jones 2018 (evidence_base.md Recreation),Stream A,needs_verification
+A-RC4-01,Community Health Nodes LE gain ~0.6 year,decision_tree.md,Stream A,cited
+A-CP1-01,Group Violence Intervention LE gain ~1.0 year,decision_tree.md,Stream A,cited
+A-CP1-02,"Focused deterrence meta-analysis: 30-60% homicide reduction in target areas",Braga & Weisburd (evidence_base.md Other city projects),Stream A,needs_verification
+A-CP1-03,"Oakland Ceasefire: 30% homicide reduction over 3 years",Barao L 2019 (evidence_base.md Other city projects),Stream A,needs_verification
+A-CP2-01,Cure Violence / READI LE gain ~1.5 year,decision_tree.md,Stream A,cited
+A-CP2-02,"Cure Violence / Baltimore: 56% homicide reduction in one district",Ransford et al. (evidence_base.md Other city projects),Stream A,needs_verification
+A-CP2-03,"READI Chicago: 79% reduction in violent crime involvement vs controls",READI Chicago eval Oct 2023 (evidence_base.md Other city projects),Stream A,needs_verification
+A-CP3-01,Summer Youth Employment LE gain ~0.6 year,decision_tree.md,Stream A,cited
+A-CP3-02,"Chicago One Summer Plus RCT: 43% reduction in violent crime arrests",Heller S Science 2014 (evidence_base.md Other city projects),Stream A,needs_verification
+A-CP4-01,Naloxone Saturation LE gain ~0.7 year,decision_tree.md,Stream A,cited
+A-CP4-02,"Massachusetts naloxone distribution: 46% lower overdose mortality",Walley et al. BMJ 2013 (evidence_base.md Other city projects),Stream A,needs_verification
+A-CP5-01,Vacant Lot Restoration LE gain ~0.5 year,decision_tree.md,Stream A,cited
+A-IM1-01,IMAN Health Center Expansion LE gain ~1.5 year,decision_tree.md,Stream A,cited
+A-IM1-02,IMAN current FQHC = 3500 sqft; expanding to ~30000 sqft; >$20M capital,IMAN_initiatives_profile.md,Stream A,cited
+A-IM2-01,Regenerator Housing LE gain ~1.0 year,decision_tree.md,Stream A,cited
+A-IM2-02,Regenerator will produce ~48 supportive housing units + ground-floor FQHC/pharmacy,IMAN_initiatives_profile.md,Stream A,cited
+A-IM3-01,Green Reentry Workforce LE gain ~0.8 year,decision_tree.md,Stream A,cited
+A-IM3-02,Green Reentry 2024: 350 graduates; 91% retention; placement rate being compiled,IMAN_initiatives_profile.md,Stream A,cited
+A-IM3-03,"Each $10,000 additional income ~ 1 year LE among low-income adults",Chetty et al. JAMA 2016 (evidence_base.md Funding/Housing),Stream A,needs_verification
+A-IM4-01,Fresh Market Operations LE gain ~0.8 year,decision_tree.md,Stream A,cited
+A-IM4-02,Fresh Market: 20% transactions via EBT; 23% revenue SNAP; 9000+ loyalty members,IMAN_initiatives_profile.md,Stream A,cited
+A-IM5-01,Weekend Warriors Youth LE gain ~0.5 year,decision_tree.md,Stream A,cited
+A-IM6-01,IMAN Oasis Cafe/Community LE gain [DATA GAP] - decision tree lists no numeric estimate,decision_tree.md,Stream A,data_gap
+A-FU1-01,NMTC / HUD Choice Neighborhoods LE gain [DATA GAP] - funding is enabling; tree lists no numeric estimate,decision_tree.md,Stream A,data_gap
+A-FU2-01,CDFI / Social Impact Bonds LE gain [DATA GAP] - no direct numeric estimate,decision_tree.md,Stream A,data_gap
+A-FU2-02,"Manitoba Mincome: 8.5% reduction in hospitalizations",Forget EL 2011 (evidence_base.md Funding/Housing),Stream A,needs_verification
+A-FU3-01,SNAP / WIC / EITC LE gain [DATA GAP] - encompasses multiple programs each with own estimate,decision_tree.md,Stream A,data_gap
+A-FU3-02,"Bolsa Familia: 17% reduction in overall child mortality; 58% in nutrition-related child mortality",Rasella et al. (evidence_base.md Funding),Stream A,needs_verification
+A-FU4-01,Philanthropy + Foundation Grants LE gain [DATA GAP],decision_tree.md,Stream A,data_gap
+A-FU5-01,City & State Capital Grants LE gain [DATA GAP],decision_tree.md,Stream A,data_gap
+A-A0-01,"Chetty income-LE gradient: top 1% live ~15 yrs longer than bottom 1%",Chetty et al. JAMA 2016 (evidence_base.md Funding),Stream A,needs_verification
+A-A0-02,"North Karelia Project: 80% reduction in CV mortality over 30 years",Vartiainen E (evidence_base.md Healthcare),Stream A,needs_verification
+A-A0-03,"A 10 mmHg reduction in population mean SBP corresponds to substantial CVD mortality decline - magnitude sourced from ACC/AHA/SPRINT literature",[DATA GAP - specific coefficient needs primary verification],Stream A,data_gap
+A-A0-04,"Englewood population ~24000; ~94% Black; poverty ~42%; LE 62-67 yrs",00_similarity_criteria.md,Stream A,needs_verification
+A-A0-05,"USALEEP tract LE data is 2010-2015 snapshot",00_master_plan.md,Stream A,cited
